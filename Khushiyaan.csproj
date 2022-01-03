@@ -67,12 +67,61 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About_us.aspx" />
+    <Content Include="Contact_us.aspx" />
+    <Content Include="Help_query.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="Our_team.aspx" />
+    <Content Include="Projects.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About_us.aspx.cs">
+      <DependentUpon>About_us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About_us.aspx.designer.cs">
+      <DependentUpon>About_us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact_us.aspx.cs">
+      <DependentUpon>Contact_us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact_us.aspx.designer.cs">
+      <DependentUpon>Contact_us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help_query.aspx.cs">
+      <DependentUpon>Help_query.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help_query.aspx.designer.cs">
+      <DependentUpon>Help_query.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Our_team.aspx.cs">
+      <DependentUpon>Our_team.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Our_team.aspx.designer.cs">
+      <DependentUpon>Our_team.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BasicLayout.master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
