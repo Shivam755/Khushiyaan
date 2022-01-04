@@ -1,6 +1,7 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>
@@ -182,6 +183,10 @@
     <Compile Include="Admin_home.aspx.designer.cs">
       <DependentUpon>Admin_home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Basiclayout.master.cs">
+      <DependentUpon>BasicLayout.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Contact_us.aspx.cs">
       <DependentUpon>Contact_us.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -219,7 +224,6 @@
     </Compile>
     <Compile Include="Manage_Team.aspx.cs">
       <DependentUpon>Manage_Team.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Manage_Team.aspx.designer.cs">
       <DependentUpon>Manage_Team.aspx</DependentUpon>
