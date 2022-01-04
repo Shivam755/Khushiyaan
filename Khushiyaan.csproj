@@ -231,6 +231,7 @@
     <Compile Include="Our_team.aspx.designer.cs">
       <DependentUpon>Our_team.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Project.cs" />
     <Compile Include="Projects.aspx.cs">
       <DependentUpon>Projects.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
