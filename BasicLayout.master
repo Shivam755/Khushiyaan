@@ -1,19 +1,58 @@
-﻿<%@ Master Language="C#" %>
+﻿<%@ Master Language="C#" Inherits="BasicLayout" CodeFile="~/Basiclayout.master.cs" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta charset="utf-8" />    
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css" integrity="sha512-rQgMaFKZKIoTKfYInSVMH1dSM68mmPYshaohG8pK17b+guRbSiMl9dDbd3Sd96voXZeGerRIFFr2ewIiusEUgg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Khushiyaan <asp:ContentPlaceHolder id="head" runat="server" /></title>
 </head>
 <body>
-    <div id="page" runat="server">
+    <form id="form1" runat="server">
+    <div id="page">
         <div id="Top">
-
+            <div id="Logo">
+                <asp:Image ID="TopLogo" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png" />
+            </div>
+            <div id="MenuBar">
+                <asp:Menu ID="NavBar" runat="server" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/index.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About_us.aspx" Text="About Us" Value="About Us"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Our_team.aspx" Text="Our team" Value="Our team"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Projects.aspx" Text="Projects" Value="Projects"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Help_query.aspx" Text="How can you help?" Value="How can you help?"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Contact_us.aspx" Text="Contact Us" Value="Contact Us"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+                <asp:HyperLink ID="donate" runat="server" NavigateUrl="https://donate.khushiyaanfoundation.org/donate" Target="_blank">Donate</asp:HyperLink>
+            </div>
         </div>
         <div id="Content">
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
         </div>
+        <div id="footer">
+            <div id="left">
+                <asp:Image ID="footerLogo" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png" />
+                <p>Registered Address:<span id="RegAddr"></span></p>
+                <p>Head Office:<span id="HeadAddr"></span></p>
+            </div>
+            <div id="mid">
+                <p><i class="fas fa-phone"></i><span id="ContNO"></span></p>
+                <p><i class="far fa-envelope"></i><span id="Email Id"></span></p>
+                <div id="Social">
+                    <h3>Connect with us</h3>
+                    <asp:HyperLink ID="Fb" runat="server" ><i class="fab fa-facebook"></i></asp:HyperLink>
+                    <asp:HyperLink ID="Twt" runat="server" ><i class="fab fa-twitter"></i></asp:HyperLink>
+                    <asp:HyperLink ID="Insta" runat="server" ><i class="fab fa-instagram"></i></asp:HyperLink>
+                </div>
+            </div>
+            <div id="right">
+                <asp:Button ID="admin" runat="server" Text="Admin Login" />
+            </div>
+        </div>
     </div>
+    </form>
 </body>
 </html>

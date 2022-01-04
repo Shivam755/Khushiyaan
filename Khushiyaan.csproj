@@ -183,6 +183,10 @@
     <Compile Include="Admin_home.aspx.designer.cs">
       <DependentUpon>Admin_home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Basiclayout.master.cs">
+      <DependentUpon>BasicLayout.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Contact_us.aspx.cs">
       <DependentUpon>Contact_us.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
