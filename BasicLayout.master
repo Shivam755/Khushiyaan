@@ -4,14 +4,16 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta charset="utf-8" />    
-    <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server" />
+    <title>Khushiyaan <asp:ContentPlaceHolder id="head" runat="server" /></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
+    <div id="page" runat="server">
+        <div id="Top">
+
+        </div>
+        <div id="Content">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
+        </div>
     </div>
-    </form>
 </body>
 </html>
