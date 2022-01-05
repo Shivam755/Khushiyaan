@@ -56,8 +56,8 @@ namespace Khushiyaan
                 }
             }
             Team obj = new() { 
-                name = Name.Value,
-                type = curType
+                Name = this.Name.Value,
+                Type = curType
             };
             DocumentReference newMem =  await db.Collection("Team").AddAsync(obj);
             ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Record Saved Sucessfully');", true);

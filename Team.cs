@@ -11,10 +11,10 @@ namespace Khushiyaan
     public class Team
     {
         [FirestoreProperty]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [FirestoreProperty]
-        public DocumentReference type { get; set; }
+        public DocumentReference Type { get; set; }
 
     }
 }

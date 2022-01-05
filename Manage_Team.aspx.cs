@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Khushiyaan
 {
     static class Extensions
-    {
+    { 
         public static IAsyncEnumerator<T> GetAsyncEnumerator<T>(this IAsyncEnumerator<T> enumerator) => enumerator;
     }
     public partial class Manage_Team : System.Web.UI.Page
@@ -18,8 +18,10 @@ namespace Khushiyaan
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
+            if (!IsPostBack)
+            {
+                RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
+            }
         }
 
         public async Task ShowDocsAsync()
