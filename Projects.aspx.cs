@@ -30,6 +30,7 @@ namespace Khushiyaan
 
             foreach (DocumentSnapshot docsnap in snap) {
                 Project project = docsnap.ConvertTo<Project>();
+                
             }
         }
     }

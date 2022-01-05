@@ -156,9 +156,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About_us.aspx" />
+    <Content Include="AddMember.aspx" />
     <Content Include="Admin_home.aspx" />
+    <Content Include="asssets\BasicLayout.css" />
     <Content Include="Contact_us.aspx" />
-    <Content Include="Contact_us.css" />
     <Content Include="Edit_Contact.aspx" />
     <Content Include="Help_query.aspx" />
     <Content Include="index.aspx" />
@@ -177,6 +178,13 @@
     <Compile Include="About_us.aspx.designer.cs">
       <DependentUpon>About_us.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddMember.aspx.cs">
+      <DependentUpon>AddMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddMember.aspx.designer.cs">
+      <DependentUpon>AddMember.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_home.aspx.cs">
       <DependentUpon>Admin_home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -188,6 +196,7 @@
       <DependentUpon>BasicLayout.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Team.cs" />
     <Compile Include="Contact_us.aspx.cs">
       <DependentUpon>Contact_us.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -267,9 +276,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

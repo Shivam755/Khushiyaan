@@ -11,25 +11,34 @@ namespace Khushiyaan
 {
 
 
-    public partial class Manage_Team
+    public partial class AddMember
     {
 
         /// <summary>
-        /// addMember control.
+        /// Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink addMember;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Name;
 
         /// <summary>
-        /// Members control.
+        /// typeSel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable Members;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect typeSel;
+
+        /// <summary>
+        /// add control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button add;
     }
 }
