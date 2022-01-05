@@ -166,6 +166,7 @@
     <Content Include="Manage_Team.aspx" />
     <Content Include="Our_team.aspx" />
     <Content Include="Projects.aspx" />
+    <Content Include="Admin_home.css" />
     <Content Include="View_Messages.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>

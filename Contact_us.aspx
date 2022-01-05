@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BasicLayout.master" AutoEventWireup="true" CodeBehind="Contact_us.aspx.cs" Inherits="Khushiyaan.Contact_us" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="Contact_us.css" rel="stylesheet" />
+    <link href="Contact_us.css" rel="stylesheet"/>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 <section id="contact">
