@@ -254,6 +254,7 @@
       <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewMessages.cs" />
     <Compile Include="View_Messages.aspx.cs">
       <DependentUpon>View_Messages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
