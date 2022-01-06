@@ -1,4 +1,6 @@
-﻿
+﻿.container{
+    border-style:inset;
+}
 
 /* The navbar */
 .topnav {
@@ -13,21 +15,11 @@
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 17px;
+        font-size: 28px;
     }
 
         .topnav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #7b91dc;
+            color: #020252;
         }
-.background {
-    background: #c597f0;
-    background-blend-mode: darken;
-    background-size: cover;
-}
-
-.h1,.h2,.h3,.h4,.h5,.h6{
-    text-align="center";
-}
-
 }

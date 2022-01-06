@@ -159,6 +159,7 @@
     <Content Include="AddMember.aspx" />
     <Content Include="Admin_home.aspx" />
     <Content Include="asssets\BasicLayout.css" />
+    <Content Include="asssets\bg.jpg" />
     <Content Include="Contact_us.aspx" />
     <Content Include="Edit_Contact.aspx" />
     <Content Include="Help_query.aspx" />
@@ -167,9 +168,11 @@
     <Content Include="Manage_Team.aspx" />
     <Content Include="Our_team.aspx" />
     <Content Include="Projects.aspx" />
+    <Content Include="Admin_login.css" />
     <Content Include="Admin_home.css" />
     <Content Include="View_Messages.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Admin_login.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About_us.aspx.cs">
@@ -262,6 +265,13 @@
     </Compile>
     <Compile Include="View_Messages.aspx.designer.cs">
       <DependentUpon>View_Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_login.aspx.cs">
+      <DependentUpon>Admin_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_login.aspx.designer.cs">
+      <DependentUpon>Admin_login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
