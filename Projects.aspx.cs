@@ -30,7 +30,10 @@ namespace Khushiyaan
             int namenum = 0;
             int descnum = 0;
             int datenum = 0;
-             foreach (DocumentSnapshot docsnap in snap) {
+            HtmlGenericControl parent = new("DIV");
+            parent.ID = "parent" ;
+            this.Controls.Add(parent);
+            foreach (DocumentSnapshot docsnap in snap) {
                     Project project = docsnap.ConvertTo<Project>();
                 if (docsnap.Exists) {
                     namenum += 1;
@@ -39,17 +42,17 @@ namespace Khushiyaan
                     HtmlGenericControl nameDiv = new("DIV");
                     nameDiv.ID = "name" + namenum;
                     nameDiv.InnerHtml += project.name;
-                    this.Controls.Add(nameDiv);
+                    parent.Controls.Add(nameDiv);
                     
                     HtmlGenericControl dateDiv = new("DIV");
                     dateDiv.ID = "date" + datenum;
                     dateDiv.InnerHtml += project.date;
-                    this.Controls.Add(dateDiv);
+                    parent.Controls.Add(dateDiv);
 
                     HtmlGenericControl descDiv = new("DIV");
                     descDiv.ID = "desc"+descnum;
                     descDiv.InnerHtml += project.desc;
-                    this.Controls.Add(descDiv);
+                    parent.Controls.Add(descDiv);
 
                 }
             }

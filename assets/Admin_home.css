@@ -22,4 +22,13 @@
             background-color: #7b91dc;
             color: #020252;
         }
+.background {
+    background: #c597f0;
+    background-blend-mode: darken;
+    background-size: cover;
 }
+
+.h1,.h2,.h3,.h4,.h5,.h6{
+    text-align:"center";
+}
+
