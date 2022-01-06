@@ -1,8 +1,46 @@
 ﻿body {
     background-color:aliceblue;
 }
-
+#titley {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    align-content: center;
+    justify-content: space-around;
+    justify-items: center;
+    background-color: rosybrown;
+}
 #toptitleview {
+    display: flex;
     background-color:blueviolet;
     font-family:Algerian;
+}
+#toptitleview1{
+    display: flex;
+    background-color: blueviolet;
+    font-family: Algerian;
+}
+#Image1 {
+    display: flex;
+    background-color: blueviolet;
+}
+
+#adminfoot {
+    background-color: violet;
+}
+
+
+#admMenuBar {
+    background-color: yellowgreen;
+}
+
+#admNavBar {
+    display: flex;
+    background-color: white;
+}
+menuitem {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    background-color: black;
 }
