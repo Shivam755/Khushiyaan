@@ -157,9 +157,7 @@
   <ItemGroup>
     <Content Include="About_us.aspx" />
     <Content Include="Admin_home.aspx" />
-    <Content Include="Assets\masterpage.css" />
     <Content Include="Contact_us.aspx" />
-    <Content Include="Contact_us.css" />
     <Content Include="Edit_Contact.aspx" />
     <Content Include="Help_query.aspx" />
     <Content Include="index.aspx" />
@@ -167,6 +165,7 @@
     <Content Include="Manage_Team.aspx" />
     <Content Include="Our_team.aspx" />
     <Content Include="Projects.aspx" />
+    <Content Include="Admin_home.css" />
     <Content Include="View_Messages.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -189,6 +188,7 @@
       <DependentUpon>BasicLayout.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Team.cs" />
     <Compile Include="Contact_us.aspx.cs">
       <DependentUpon>Contact_us.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -246,6 +246,7 @@
       <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewMessages.cs" />
     <Compile Include="View_Messages.aspx.cs">
       <DependentUpon>View_Messages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

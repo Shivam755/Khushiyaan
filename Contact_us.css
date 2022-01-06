@@ -7,18 +7,14 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #6a9ac4;
-}
-
 #contact {
-    background-color: #6a9ac4;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .contact-box {
+    background-color: #6a9ac4;
     width: clamp(100px, 90%, 1000px);
     margin: 80px 50px;
     display: flex;
@@ -42,19 +38,6 @@ body {
     border-radius: 0 10px 10px 0;
 }
 
-@media only screen and (max-width: 800px) {
-    .contact-links, .contact-form-wrapper {
-        width: 100%;
-    }
-
-    .contact-links {
-        border-radius: 10px 10px 0 0;
-    }
-
-    .contact-form-wrapper {
-        border-radius: 0 0 10px 10px;
-    }
-}
 
 h2 {
     font-family: 'Arimo', sans-serif;
@@ -85,14 +68,7 @@ img {
     user-select: none;
 }
 
-    img:hover {
-        transform: scale(1.1, 1.1);
-    }
 
-    img:active {
-        transform: scale(1.1, 1.1);
-        filter: hue-rotate(220deg) drop-shadow(2px 4px 4px #222) sepia(0.3);
-    }
 
 .form-item {
     position: relative;
@@ -155,5 +131,5 @@ input, textarea {
     .submit-btn:active {
         transform: scale(1.1, 1.1);
         filter: sepia(0.5);
-    }
 
+    }
