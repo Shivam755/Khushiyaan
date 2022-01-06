@@ -166,6 +166,7 @@
     <Content Include="Manage_Team.aspx" />
     <Content Include="Our_team.aspx" />
     <Content Include="Projects.aspx" />
+    <Content Include="Admin_home.css" />
     <Content Include="View_Messages.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -246,6 +247,7 @@
       <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewMessages.cs" />
     <Compile Include="View_Messages.aspx.cs">
       <DependentUpon>View_Messages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
