@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using Google.Cloud.Firestore;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Khushiyaan
 {
@@ -28,6 +29,9 @@ namespace Khushiyaan
             int messagenum = 0;
             int emailnum = 0;
             int phonenum = 0;
+            HtmlGenericControl parent = new("DIV");
+            parent.ID = "parent";
+            this.Controls.Add(parent);
             foreach (DocumentSnapshot docsnap in snap)
             {
                 ViewMessages view = docsnap.ConvertTo<ViewMessages>();
@@ -40,22 +44,22 @@ namespace Khushiyaan
                     HtmlGenericControl nameDiv = new("DIV");
                     nameDiv.ID = "name" + namenum;
                     nameDiv.InnerHtml += view.name;
-                    this.Controls.Add(nameDiv);
+                    parent.Controls.Add(nameDiv);
 
                     HtmlGenericControl messDiv = new("DIV");
                     messDiv.ID = "date" + messagenum;
                     messDiv.InnerHtml += view.message;
-                    this.Controls.Add(messDiv);
+                    parent.Controls.Add(messDiv);
 
                     HtmlGenericControl emailDiv = new("DIV");
                     emailDiv.ID = "desc" + emailnum;
                     emailDiv.InnerHtml += view.email;
-                    this.Controls.Add(emailDiv);
+                    parent.Controls.Add(emailDiv);
 
                     HtmlGenericControl phoneDiv = new("DIV");
                     phoneDiv.ID = "date" + phonenum;
                     phoneDiv.InnerHtml += view.phone;
-                    this.Controls.Add(phoneDiv);
+                    parent.Controls.Add(phoneDiv);
                 }
             }
         }
