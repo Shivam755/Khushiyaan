@@ -4,7 +4,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta charset="utf-8" />    
-    <title></title>
+    <link href="Assets/masterpage.css" rel="stylesheet"/>
+    <title>Goku</title>
     <asp:ContentPlaceHolder id="head" runat="server" />
 </head>
 <body>
@@ -12,6 +13,11 @@
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
     </div>
+        <div id="toptitleview" class="toptitleview">
+            KHUSHIYAAN
+        </div>
+        <div anchor="south" id="blue">Copyrights @2021-2022. Made by Quality Debuggers<sup>TM</sup></div>
+        <footer>Copyrights @2021-2022. Made by Quality Debuggers</footer>
     </form>
 </body>
 </html>
