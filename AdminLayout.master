@@ -11,13 +11,17 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
-    </div>
-        <div id="toptitleview" class="toptitleview">
-            KHUSHIYAAN
+        <div id="titley">
+            <asp:Image id="Image1" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png"/>
+            <div id="toptitleview" class="toptitleview">
+             KHUSHIYAAN
+            </div>
         </div>
-        <div anchor="south" id="blue">Copyrights @2021-2022. Made by Quality Debuggers<sup>TM</sup></div>
-        <footer>Copyrights @2021-2022. Made by Quality Debuggers</footer>
-    </form>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
+        
+        <div anchor="south" id="blue"> Copyrights 2021-2022. Made by Quality Debuggers<sup>TM</sup> </div>
+        <footer>&copy Copyrights 2021-2022. Made by Quality Debuggers<sup>TM</sup> | All rights reserved.</footer>
+        </div>
+        </form>
 </body>
 </html>

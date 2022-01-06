@@ -157,6 +157,10 @@
   <ItemGroup>
     <Content Include="About_us.aspx" />
     <Content Include="Admin_home.aspx" />
+    <Content Include="Assets\BasicLayout.css" />
+    <Content Include="Assets\Contact_us.css" />
+    <Content Include="Assets\masterpage.css" />
+    <Content Include="Assets\temporary_bg.jpg" />
     <Content Include="Contact_us.aspx" />
     <Content Include="Edit_Contact.aspx" />
     <Content Include="Help_query.aspx" />
@@ -165,7 +169,7 @@
     <Content Include="Manage_Team.aspx" />
     <Content Include="Our_team.aspx" />
     <Content Include="Projects.aspx" />
-    <Content Include="Admin_home.css" />
+    <Content Include="Assets\Admin_home.css" />
     <Content Include="View_Messages.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
