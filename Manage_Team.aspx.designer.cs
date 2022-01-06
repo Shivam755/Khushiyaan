@@ -15,13 +15,31 @@ namespace Khushiyaan
     {
 
         /// <summary>
-        /// addMember control.
+        /// Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink addMember;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Name;
+
+        /// <summary>
+        /// typeSel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect typeSel;
+
+        /// <summary>
+        /// add control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button add;
 
         /// <summary>
         /// Members control.
