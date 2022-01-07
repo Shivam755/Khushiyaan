@@ -160,6 +160,7 @@
     <Content Include="Assets\BasicLayout.css" />
     <Content Include="Assets\Contact_us.css" />
     <Content Include="Assets\masterpage.css" />
+    <Content Include="Assets\about_us.css" />
     <Content Include="Assets\temporary_bg.jpg" />
     <Content Include="Contact_us.aspx" />
     <Content Include="Edit_Contact.aspx" />

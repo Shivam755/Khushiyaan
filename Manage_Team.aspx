@@ -4,8 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Add Members</h1>
     <div>
-        Name: <input type="text" ID="Name" text="Name" runat="server"/><br />
-        Type: <select id="typeSel" runat="server" runat="server"></select><br />
+        Name: <input type="text" id="Name" text="Name" runat="server"/><br />
+        Type: <select id="typeSel" runat="server"></select><br />
         <asp:Button ID="add" runat="server" Text="Add" OnClick="add_Click" />
     </div>
     <h1>Team members: </h1>
