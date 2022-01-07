@@ -64,6 +64,7 @@ namespace Khushiyaan
                     phoneDiv.SetAttribute("ID", "phone"+phonenum);
                     phoneDiv.InnerHtml = view.phone.ToString();
                     parent.AppendChild(phoneDiv);
+
                 }
             }
         }
