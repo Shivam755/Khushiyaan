@@ -8,7 +8,7 @@ using Google.Cloud.Firestore;
 namespace Khushiyaan
 {
     [FirestoreData]
-    public class ContactUs
+    public partial class ContactUs
     {
         [FirestoreProperty]
         public string RegisteredAddress { get; set; }

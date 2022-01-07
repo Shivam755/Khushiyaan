@@ -36,8 +36,16 @@ namespace Khushiyaan
 
             //Getting data for types dropdown 
 
-            IAsyncEnumerator<DocumentReference> contact = db.Collection("Contact_us info").ListDocumentsAsync().GetAsyncEnumerator();
-       
+            IAsyncEnumerator<DocumentReference> contact = db.Collection("Contact Us Info").ListDocumentsAsync().GetAsyncEnumerator();
+            await foreach (DocumentReference docref in contact)
+            {
+                DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
+                ContactUs view = docsnap.ConvertTo<ContactUs>();
+                address.InnerHtml = view.RegisteredAddress;
+                email.InnerHtml = view.Email;
+                contactno.InnerHtml = view.ContactNo;
+                
+            }
         }
     }
 }
