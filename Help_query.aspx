@@ -7,18 +7,18 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <input type="radio" name="Photos" id="check1"  />
-    <input type="radio" name="Photos" id="check2" checked="checked" />
-    <input type="radio" name="Photos" id="check3" />
-    <input type="radio" name="Photos" id="check4" />
+    <input class="inputR" type="radio" name="Photos" id="check1"  />
+    <input class="inputR" type="radio" name="Photos" id="check2" checked="checked" />
+    <input class="inputR" type="radio" name="Photos" id="check3" />
+    <input class="inputR" type="radio" name="Photos" id="check4" />
 
     <div class="container">
-        <h1> SUPPORT US </h1>
+        <h1 class="h1R"> SUPPORT US </h1>
         <div class="top-content">
-            <h3>How ? </h3>
-            <label for="check2">DONATION </label>
-            <label for="check3">BE A MEMBER </label>
-            <label for="check4">VOLUNTEER </label>
+            <h3 class="h3R">How ? </h3>
+            <label class="labelR" for="check2">DONATION </label>
+            <label class="labelR" for="check3">BE A MEMBER </label>
+            <label class="labelR" for="check4">VOLUNTEER </label>
         </div>
         <div class="photo-gallery">
             <div class="pic family">
