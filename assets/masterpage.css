@@ -1,12 +1,17 @@
 ﻿body {
-    background-color:aliceblue;
+    background-color:white;
     margin:0;
     padding:0;
 }
+
+#ContentPlaceHolder1 {
+    background-color: white;
+}
+
 #titley {
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     align-content: center;
     justify-content: space-around;
     justify-items: center;

@@ -1,12 +1,13 @@
-﻿body {
-    background-color:inherit;
+﻿
+body {
+    background-color: floralwhite;
 }
 
-.containcont{
-    
-    display:flex;
-    align-content:center;
-    flex-direction:column;
+.containcont {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    background-color: floralwhite;
 }
 .abttitle {
     display: flex;
@@ -14,14 +15,18 @@
     flex-direction: column;
     background-color: deepskyblue;
     padding: 1rem;
+    font-family: 'Baskerville Old Face';
+    font-size:25px;
 }
 
 .abtcontent {
     display: flex;
     align-content: center;
-    justify-content:center;
+    justify-content: center;
     flex-direction: row;
-    background-color: pink;
+    background-color: floralwhite;
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
     padding: 1rem;
 }
 
@@ -29,4 +34,8 @@
     display: flex;
     align-content: center;
     flex-direction: row;
+}
+
+#Content {
+    background-color: floralwhite;
 }

@@ -1,11 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BasicLayout.master" AutoEventWireup="true" CodeBehind="About_us.aspx.cs" Inherits="Khushiyaan.About_us" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Assets/about_us.css" rel="stylesheet" />
     <div class="containcont">
+        <br/><br/>
     <div class="abttitle">
         About us:
         <hr style="height:5%; width:80%; margin:0" />
@@ -27,7 +29,7 @@
         The overwhelming response and unconditional support of the volunteers have always been our inspiration to make this world a better place than before.
     </div>
     </div>
-
+    <br/><br/>
     <div class="containcont">
     <div class="abttitle">
         Our objective:
@@ -49,7 +51,7 @@
         Care Beyond all manmade Barriers
     </div>
     </div>
-
+    <br/><br/>
     <div class="bigcontaincont">
     <div class="containcont">
      <div class="abttitle">
