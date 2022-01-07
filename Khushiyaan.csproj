@@ -159,11 +159,16 @@
     <Content Include="Admin_home.aspx" />
     <Content Include="Admin_login.css" />
     <Content Include="Assets\BasicLayout.css" />
+    <Content Include="Assets\beachwarriorsp2.jpg" />
     <Content Include="Assets\Contact_us.css" />
     <Content Include="Assets\Help_query_StyleSheet.css" />
     <Content Include="Assets\Manage_Team.css" />
     <Content Include="Assets\masterpage.css" />
+    <Content Include="Assets\naarishaktip2.jpg" />
+    <Content Include="Assets\projectpathshalap2.jpg" />
+    <Content Include="Assets\Projects.css" />
     <Content Include="Assets\about_us.css" />
+    <Content Include="Assets\rotigharp2.jpg" />
     <Content Include="Assets\temporary_bg.jpg" />
     <Content Include="BasicLayout.master" />
     <Content Include="Contact_us.aspx" />
@@ -175,7 +180,8 @@
     <Content Include="Our_team.aspx" />
     <Content Include="Projects.aspx" />
     <Content Include="Assets\Admin_home.css" />
-    <Content Include="View_Messages.css" />
+    <Content Include="Assets\Edit_Contact.css" />
+    <Content Include="Assets\View_Messages.css" />
     <Content Include="View_Messages.aspx" />
     <Content Include="Web.config" />
     <Content Include="Admin_login.aspx" />

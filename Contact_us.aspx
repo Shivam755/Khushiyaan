@@ -13,8 +13,8 @@
       <h2>CONTACT</h2>
        <div class="info">
            Address : <div id="address" runat="server"></div>
-           Email-ID : <div id="email" runat="server" ></div>
-           Contact No. : <div id="contactno" runat="server" ></div>
+           Email-ID : <div id="email" runat="server"></div>
+           Contact No. : <div id="contactno" runat="server"></div>
        </div>
       <div class="links">
         <div class="link">

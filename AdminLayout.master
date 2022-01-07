@@ -3,12 +3,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href ="Admin_home.css" rel ="stylesheet" />
         <link href ="Admin_login.css" rel="stylesheet" />
-
+    <link href="Assets/Admin_home.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+    <link href="Assets/Edit_Contact.css" rel="stylesheet" />
+
 
 <meta charset="utf-8" />    
     <link href="Assets/masterpage.css" rel="stylesheet"/>
