@@ -195,10 +195,6 @@
     <Compile Include="Admin_home.aspx.designer.cs">
       <DependentUpon>Admin_home.aspx</DependentUpon>
     </Compile>
-    <AdditionalFiles Include="Basiclayout.master.cs">
-      <DependentUpon>BasicLayout.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="ContactUs.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
