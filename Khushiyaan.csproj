@@ -175,7 +175,7 @@
     <Content Include="Our_team.aspx" />
     <Content Include="Projects.aspx" />
     <Content Include="Assets\Admin_home.css" />
-    <Content Include="Edit_Contact.css" />
+    <Content Include="Assets\Edit_Contact.css" />
     <Content Include="View_Messages.css" />
     <Content Include="View_Messages.aspx" />
     <Content Include="Web.config" />
