@@ -1,0 +1,97 @@
+﻿/* Basic tag setup*/
+body {
+    margin:0;
+    padding:0;
+}
+
+/* Common classes*/
+.row{
+    display:flex;
+    flex-direction:row;
+}
+
+.column{
+    display: flex;
+    flex-direction:column;
+}
+
+/* Whole page */
+#page {
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-between;
+    overflow-y: scroll;
+    background-color: #8fa9ff;
+}
+/* Top part of page*/
+#Logo{
+    background-color:#ffc300;
+}
+#TopLogo{
+    border-radius:5%;
+    margin:10px;
+    width:230px;
+    height: 100px;
+}
+#MenuBar{
+    background-color:#c405ff;
+    font-size: 20px;
+    justify-content:space-between;
+    align-items:center;
+}
+#NavBar {
+    align-items: center;
+    justify-content: center;
+    
+}
+#NavBar ul li {
+    padding: 0px 10px 0px 10px;
+}
+    #NavBar ul :hover {
+        background-color:#40ff05;
+        border-radius: 5%;
+        color:#c405ff;
+    }
+    #NavBar ul li a {
+        padding: 10px 10px 10px 10px;
+        color: #ffc405;
+    }
+#donate {
+    background-color: #40ff05;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5%;
+    color: #0540FF;
+}
+
+/* Bottom part of the page*/
+#footer {
+    padding: 10px;
+    justify-self: flex-end;
+    background-color: #c405ff;
+    justify-content: space-between;
+    font-size: 20px;
+    color: #ffc405;
+}
+#left{
+    justify-content:space-evenly;
+}
+#mid{
+    justify-content:space-evenly;
+}
+#right{
+    height: 20vh;
+    align-items:flex-end;
+    justify-content:flex-end;
+}
+#admin{
+    background-color: #40ff05;
+}
+#Social{
+    justify-content:space-evenly;
+}
+#copyright {
+    background-color: #ffc300;
+    justify-self: flex-end;
+}

@@ -7,18 +7,14 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #6a9ac4;
-}
-
 #contact {
-    background-color: #6a9ac4;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .contact-box {
+    background-color: #6a9ac4;
     width: clamp(100px, 90%, 1000px);
     margin: 80px 50px;
     display: flex;

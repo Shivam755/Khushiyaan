@@ -3,15 +3,44 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href ="Admin_home.css" rel ="stylesheet" />
+        <link href ="Admin_login.css" rel="stylesheet" />
+
+
+
 <meta charset="utf-8" />    
-    <title></title>
+    <link href="Assets/masterpage.css" rel="stylesheet"/>
+    <title>Goku</title>
     <asp:ContentPlaceHolder id="head" runat="server" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
+        <div id="titley">
+            
+            <div id="toptitleview1">WELCOME ADMIN</div>
+
+            <asp:Image id="Image1" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png"/>
+            <div id="toptitleview">WELCOME ADMIN!!!</div>
+             
+        </div>
+
+        <div id="admMenuBar">
+                <asp:Menu ID="admNavBar" runat="server" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Admin_home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Manage_Team.aspx" Text="Manage Team" Value="Our team"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Manage_Projects.aspx" Text="Manage Projects" Value="Projects"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Edit_Contact.aspx" Text="Manage Contacts" Value="Contact Us"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ViewMessages.aspx" Text="View Responses" Value="How can you help?"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+           </div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
-    </div>
-    </form>
+        
+       
+        <footer id="adminfoot">&copy Copyrights 2021-2022. Made by Quality Debuggers<sup>TM</sup> | All rights reserved.</footer>
+        </div>
+        </form>
 </body>
 </html>

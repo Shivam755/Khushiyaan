@@ -3,25 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using Google.Cloud.Firestore;
 using System.Threading.Tasks;
 
 namespace Khushiyaan
 {
+    
     static class Extensions
     { 
         public static IAsyncEnumerator<T> GetAsyncEnumerator<T>(this IAsyncEnumerator<T> enumerator) => enumerator;
     }
     public partial class Manage_Team : System.Web.UI.Page
     {
-        
+        FirestoreDb db;
+        IAsyncEnumerator<Google.Cloud.Firestore.DocumentReference> types = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
-            }
+            
+            RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
+
         }
 
         public async Task ShowDocsAsync()
@@ -29,12 +31,19 @@ namespace Khushiyaan
             //Creating connection
             String path = AppDomain.CurrentDomain.BaseDirectory + @"khushiyaan-48310-firebase-adminsdk-n6h2h-92ec6e587c.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
-            FirestoreDb db = FirestoreDb.Create("khushiyaan-48310");
+            db = FirestoreDb.Create("khushiyaan-48310");
 
-            //Getting data
-            IAsyncEnumerator<Google.Cloud.Firestore.DocumentReference> projects = db.Collection("Team").ListDocumentsAsync().GetAsyncEnumerator();
-
+            //Getting data for types dropdown 
+            types = db.Collection("Member Types").ListDocumentsAsync().GetAsyncEnumerator();
             DocumentSnapshot temp;
+            await foreach (DocumentReference doc in types)
+            {
+                temp = await doc.GetSnapshotAsync();
+                typeSel.Items.Add(new ListItem(temp.GetValue<String>("Name")));
+            }
+
+            //Getting data for table
+            IAsyncEnumerator<Google.Cloud.Firestore.DocumentReference> projects = db.Collection("Team").ListDocumentsAsync().GetAsyncEnumerator();
             await foreach(DocumentReference doc in projects)
             {
                 temp = await doc.GetSnapshotAsync();
@@ -44,24 +53,79 @@ namespace Khushiyaan
                 row.Attributes.Add("ID", temp.Id);
 
                 //Creating cells
-                HtmlTableCell col1 = new(), col2 = new(),col3=new(), col4=new();
-                HtmlLink edit = new();
-                edit.Href = "~/";
-                col1.Controls.Add(new LiteralControl(temp.GetValue<String>("Name")));
-                col2.Controls.Add(new LiteralControl(type.GetValue<String>("Name")));
-                col4.Controls.Add(edit);
+                HtmlTableCell col1 = new(), col2 = new(),col3=new();
+                CheckBox ck = new() { ID=temp.Id, Enabled=true};
+                col1.Controls.Add(ck);
+                col2.Controls.Add(new LiteralControl(temp.GetValue<String>("Name")));
+                col3.Controls.Add(new LiteralControl(type.GetValue<String>("Name")));
 
 
                 //Adding cells to rows
                 row.Cells.Add(col1);
                 row.Cells.Add(col2);
                 row.Cells.Add(col3);
-                row.Cells.Add(col4);
 
                 //Adding row to table
                 Members.Rows.Add(row);
-                Console.WriteLine(doc.ToString());
             }
+
+            SaveViewState();
+        }
+
+        protected async void delete_Click(object sender, EventArgs e)
+        {
+            RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
+            db = FirestoreDb.Create("khushiyaan-48310");
+            int count = 0;
+            foreach(HtmlTableRow row in Members.Rows)
+            {
+                if (count == 0)
+                {
+                    count++;
+                    continue;
+                }
+                HtmlTableCellCollection cells = row.Cells;
+                HtmlTableCell cell = cells[0];
+                ControlCollection cont = cell.Controls;
+                System.Diagnostics.Debug.WriteLine("This is a log"+count);
+            }
+            
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Member Deleted Sucessfully');", true);
+            Response.Redirect("~/Manage_Team.aspx");
+        }
+        protected async void add_Click(object sender, EventArgs e)
+        {
+            //Getting data
+            db = FirestoreDb.Create("khushiyaan-48310");
+            types = db.Collection("Member Types").ListDocumentsAsync().GetAsyncEnumerator();
+            
+            DocumentSnapshot temp;
+            DocumentReference curType = null;
+            await foreach (DocumentReference doc in types)
+            {
+                temp = await doc.GetSnapshotAsync();
+                if (temp.GetValue<String>("Name").Equals(typeSel.Value))
+                {
+                    curType = doc;
+                    break;
+                }
+            }
+            Team obj = new()
+            {
+                Name = this.Name.Value,
+                Type = curType
+            };
+            DocumentReference newMem = await db.Collection("Team").AddAsync(obj);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Member Added Sucessfully');", true);
+            Response.Redirect("~/Manage_Team.aspx");
+        }
+
+        protected override object SaveViewState()
+        {
+            //save view state right after the dynamic controlss added
+            var viewState = new object[1];
+            viewState[0] = base.SaveViewState();
+            return viewState;
         }
     }
 }
