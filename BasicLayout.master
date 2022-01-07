@@ -16,12 +16,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="page">
-        <div id="Top">
+    <div id="page" class="column">
+        <div id="Top" class="column">
             <div id="Logo">
                 <asp:Image ID="TopLogo" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png" />
             </div>
-            <div id="MenuBar">
+            <div id="MenuBar" class="row">
                 <asp:Menu ID="NavBar" runat="server" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/index.aspx" Text="Home" Value="Home"></asp:MenuItem>
@@ -38,27 +38,29 @@
         <div id="Content">
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
         </div>
-        <div id="footer">
-            <div id="left">
-                <asp:Image ID="footerLogo" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png" />
-                <p>Registered Address:<span id="RegAddr"></span></p>
-                <p>Head Office:<span id="HeadAddr"></span></p>
-            </div>
-            <div id="mid">
-                <p><i class="fas fa-phone"></i><span id="ContNO"></span></p>
-                <p><i class="far fa-envelope"></i><span id="Email Id"></span></p>
-                <div id="Social">
+        <div id="bottom">
+            <div id="footer" class="row">
+                <div id="left" class="column">
+                    <p>Registered Address:<span id="RegAddr"></span></p>
+                    <p>Head Office:<span id="HeadAddr"></span></p>
+                </div>
+                <div id="mid" class="column">
+                    <p><i class="fas fa-phone"></i><span id="ContNO"></span></p>
+                    <p><i class="far fa-envelope"></i><span id="Email Id"></span></p>
                     <h3>Connect with us</h3>
-                    <asp:HyperLink ID="Fb" runat="server" ><i class="fab fa-facebook"></i></asp:HyperLink>
-                    <asp:HyperLink ID="Twt" runat="server" ><i class="fab fa-twitter"></i></asp:HyperLink>
-                    <asp:HyperLink ID="Insta" runat="server" ><i class="fab fa-instagram"></i></asp:HyperLink>
+                    <div id="Social" class="row">
+                        <asp:HyperLink ID="Fb" runat="server" ><i class="fab fa-facebook"></i></asp:HyperLink>
+                        <asp:HyperLink ID="Twt" runat="server" ><i class="fab fa-twitter"></i></asp:HyperLink>
+                        <asp:HyperLink ID="Insta" runat="server" ><i class="fab fa-instagram"></i></asp:HyperLink>
+                    </div>
+                </div>
+                <div id="right" class="column">
+                    <asp:Button ID="admin" runat="server" Text="Admin Login" />
                 </div>
             </div>
-            <div id="right">
-                <asp:Button ID="admin" runat="server" Text="Admin Login" />
-            </div>
+            <div id="copyright">&copy Copyrights 2021-2022. Made by Quality Debuggers<sup>TM</sup> | All rights reserved.</div>
         </div>
-    </div>
+        </div>
     </form>
 </body>
 </html>
