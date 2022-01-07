@@ -160,6 +160,7 @@
     <Content Include="Admin_login.css" />
     <Content Include="Assets\BasicLayout.css" />
     <Content Include="Assets\Contact_us.css" />
+    <Content Include="Assets\Help_query_StyleSheet.css" />
     <Content Include="Assets\masterpage.css" />
     <Content Include="Assets\temporary_bg.jpg" />
     <Content Include="Contact_us.aspx" />
