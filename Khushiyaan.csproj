@@ -161,8 +161,10 @@
     <Content Include="Assets\BasicLayout.css" />
     <Content Include="Assets\Contact_us.css" />
     <Content Include="Assets\Help_query_StyleSheet.css" />
+    <Content Include="Assets\Manage_Team.css" />
     <Content Include="Assets\masterpage.css" />
     <Content Include="Assets\temporary_bg.jpg" />
+    <Content Include="BasicLayout.master" />
     <Content Include="Contact_us.aspx" />
     <Content Include="Edit_Contact.aspx" />
     <Content Include="Help_query.aspx" />
@@ -191,10 +193,10 @@
     <Compile Include="Admin_home.aspx.designer.cs">
       <DependentUpon>Admin_home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Basiclayout.master.cs">
+    <AdditionalFiles Include="Basiclayout.master.cs">
       <DependentUpon>BasicLayout.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    </AdditionalFiles>
     <Compile Include="Team.cs" />
     <Compile Include="Contact_us.aspx.cs">
       <DependentUpon>Contact_us.aspx</DependentUpon>
@@ -270,7 +272,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BasicLayout.master" />
     <Content Include="AdminLayout.master" />
     <Content Include="khushiyaan-48310-firebase-adminsdk-n6h2h-92ec6e587c.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
