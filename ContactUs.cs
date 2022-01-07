@@ -8,15 +8,15 @@ using Google.Cloud.Firestore;
 namespace Khushiyaan
 {
     [FirestoreData]
-    public class Project
+    public partial class ContactUs
     {
         [FirestoreProperty]
-        public string Name { get; set; }
+        public string RegisteredAddress { get; set; }
 
         [FirestoreProperty]
-        public string Description { get; set; }
+        public string Email { get; set; }
 
         [FirestoreProperty]
-        public string StartedOn { get; set; }
+        public string ContactNo { get; set; }
     }
 }

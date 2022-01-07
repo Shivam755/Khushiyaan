@@ -11,14 +11,12 @@ namespace Khushiyaan
     public class ViewMessages
     {
         [FirestoreProperty]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [FirestoreProperty]
-        public string message { get; set; }
+        public string Message { get; set; }
 
         [FirestoreProperty]
-        public string email { get; set; }
-
-        public int phone { get; set; }
+        public string Email { get; set; }
     }
 }

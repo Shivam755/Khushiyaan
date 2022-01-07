@@ -19,13 +19,18 @@ namespace Khushiyaan
     {
         FirestoreDb db;
         IAsyncEnumerator<Google.Cloud.Firestore.DocumentReference> types = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
-
+            if (IsPostBack)
+            {
+                LoadViewState(SaveViewState());
+            }
+            else
+            {
+                RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
+            }
         }
-
         public async Task ShowDocsAsync()
         {
             //Creating connection
@@ -53,45 +58,55 @@ namespace Khushiyaan
                 row.Attributes.Add("ID", temp.Id);
 
                 //Creating cells
-                HtmlTableCell col1 = new(), col2 = new(),col3=new(), col4=new();
-                HtmlInputButton delete = new() { ID= temp.Id, Value="Delete"};
-                delete.ServerClick += new EventHandler(this.delete_Click);
-                col1.Controls.Add(new LiteralControl(temp.GetValue<String>("Name")));
-                col2.Controls.Add(new LiteralControl(type.GetValue<String>("Name")));
-                col4.Controls.Add(delete);
+                HtmlTableCell col1 = new(), col2 = new(),col3=new();
+                CheckBox ck = new() { ID=temp.Id, Enabled=true};
+                col1.Controls.Add(ck);
+                col2.Controls.Add(new LiteralControl(temp.GetValue<String>("Name")));
+                col3.Controls.Add(new LiteralControl(type.GetValue<String>("Name")));
 
 
                 //Adding cells to rows
                 row.Cells.Add(col1);
                 row.Cells.Add(col2);
                 row.Cells.Add(col3);
-                row.Cells.Add(col4);
 
                 //Adding row to table
                 Members.Rows.Add(row);
-                Console.WriteLine(doc.ToString());
             }
         }
 
-        async void delete_Click(object sender, EventArgs e)
-        { 
-            
-            HtmlButton cur = (HtmlButton)sender;
+        protected async void delete_Click(object sender, EventArgs e)
+        {
+            RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
             db = FirestoreDb.Create("khushiyaan-48310");
-
-            DocumentReference del = db.Collection("Team").Document(cur.ID);
-            DocumentSnapshot temp = await del.GetSnapshotAsync();
-            Team obj = temp.ConvertTo<Team>();
-            Name.Value = obj.Name;
+            int count = 0;
+            foreach(HtmlTableRow row in Members.Rows)
+            {
+                if (count == 0)
+                {
+                    count++;
+                    continue;
+                }
+                HtmlTableCellCollection cells = row.Cells;
+                HtmlTableCell cell = cells[0];
+                ControlCollection cont = cell.Controls;
+                System.Diagnostics.Debug.WriteLine("This is a log"+count);
+                /*CheckBox ck = (CheckBox)cont[0];
+                if (ck.Checked) {
+                    db.Collection("Team").Document(ck.ID).DeleteAsync();
+                }*/
+                
+            }
             
-            //ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Member Deleted Sucessfully');", true);
-            //Response.Redirect("~/Manage_Team.aspx");
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Member Deleted Sucessfully');", true);
+            Response.Redirect("~/Manage_Team.aspx");
         }
         protected async void add_Click(object sender, EventArgs e)
         {
             //Getting data
             db = FirestoreDb.Create("khushiyaan-48310");
             types = db.Collection("Member Types").ListDocumentsAsync().GetAsyncEnumerator();
+            
             DocumentSnapshot temp;
             DocumentReference curType = null;
             await foreach (DocumentReference doc in types)
@@ -111,6 +126,28 @@ namespace Khushiyaan
             DocumentReference newMem = await db.Collection("Team").AddAsync(obj);
             ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Member Added Sucessfully');", true);
             Response.Redirect("~/Manage_Team.aspx");
+        }
+
+        protected override object SaveViewState()
+        {
+            //save view state right after the dynamic controlss added
+            var viewState = new object[1];
+            viewState[0] = base.SaveViewState();
+            return viewState;
+        }
+        protected override void LoadViewState(object savedState)
+        {
+            //load data frm saved viewstate
+            if (savedState is object[] && ((object[])savedState).Length == 1)
+            {
+                var viewState = (object[])savedState;
+                RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
+                base.LoadViewState(viewState[0]);
+            }
+            else
+            {
+                base.LoadViewState(savedState);
+            }
         }
     }
 }

@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href ="Admin_home.css" rel ="stylesheet" />
+        <link href ="Admin_login.css" rel="stylesheet" />
+
+
+
 <meta charset="utf-8" />    
     <link href="Assets/masterpage.css" rel="stylesheet"/>
     <title>Khushiyaan NGO</title>
@@ -27,9 +32,8 @@
                         <asp:MenuItem NavigateUrl="~/Manage_Projects.aspx" Text="Manage Projects" Value="Projects"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Edit_Contact.aspx" Text="Manage Contacts" Value="Contact Us"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/View_Messages.aspx" Text="View Responses" Value="How can you help?"></asp:MenuItem>
-                    </Items>                        
-                </asp:Menu>                 
-                  
+                    </Items>
+                </asp:Menu>
            </div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
         
