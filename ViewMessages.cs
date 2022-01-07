@@ -18,8 +18,5 @@ namespace Khushiyaan
 
         [FirestoreProperty]
         public string Email { get; set; }
-
-        [FirestoreProperty]
-        public string Phone { get; set; }
     }
 }

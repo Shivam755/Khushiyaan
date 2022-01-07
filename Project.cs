@@ -11,12 +11,12 @@ namespace Khushiyaan
     public class Project
     {
         [FirestoreProperty]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [FirestoreProperty]
-        public string desc { get; set; }
+        public string Description { get; set; }
 
         [FirestoreProperty]
-        public string date { get; set; }
+        public string StartedOn { get; set; }
     }
 }

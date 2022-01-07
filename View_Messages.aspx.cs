@@ -27,40 +27,32 @@ namespace Khushiyaan
             int namenum = 0;
             int messagenum = 0;
             int emailnum = 0;
-            int phonenum = 0;
             await foreach (DocumentReference docref in responses)
             {
-                System.Diagnostics.Debug.WriteLine("This is a log" + namenum);
                 DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
-                System.Diagnostics.Debug.WriteLine("This is a log" + namenum);
                 ViewMessages view = docsnap.ConvertTo<ViewMessages>();
-                System.Diagnostics.Debug.WriteLine("This is a log" + namenum);
                 namenum += 1;
                 messagenum += 1;
                 emailnum += 1;
-                phonenum += 1;
                     
                 HtmlGenericControl nameDiv = new HtmlGenericControl("DIV");
-                nameDiv.Attributes.Add("class", "name"+namenum);
+                nameDiv.Attributes.Add("ID", "name"+namenum);
+                nameDiv.Attributes.Add("class", "nameClass");
                 nameDiv.InnerHtml = view.Name;
                 Container.Controls.Add(nameDiv);
 
 
                 HtmlGenericControl messageDiv = new HtmlGenericControl("DIV");
                 messageDiv.Attributes.Add("ID", "message"+messagenum);
+                messageDiv.Attributes.Add("class", "messageClass");
                 messageDiv.InnerHtml = view.Message;
                 Container.Controls.Add(messageDiv);
 
                 HtmlGenericControl emailDiv = new HtmlGenericControl("DIV");
                 emailDiv.Attributes.Add("ID", "email"+emailnum);
+                emailDiv.Attributes.Add("class", "emailClass");
                 emailDiv.InnerHtml = view.Email;
                 Container.Controls.Add(emailDiv);
-
-                HtmlGenericControl phoneDiv = new HtmlGenericControl("DIV");
-                phoneDiv.Attributes.Add("ID", "phone"+phonenum);
-                phoneDiv.InnerHtml = view.Phone;
-                Container.Controls.Add(phoneDiv);
-                
             }
 
         }
