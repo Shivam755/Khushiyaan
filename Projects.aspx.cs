@@ -51,7 +51,7 @@ namespace Khushiyaan
                 HtmlGenericControl dateDiv = new HtmlGenericControl("DIV");
                 dateDiv.Attributes.Add("ID", "date" + datenum);
                 dateDiv.Attributes.Add("class", "dateClass");
-                dateDiv.InnerHtml = proj.StartedOn;
+                dateDiv.InnerHtml = proj.StartedOn.ToString();
                 Container.Controls.Add(dateDiv);
             }
 
