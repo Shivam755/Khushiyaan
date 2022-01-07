@@ -1,0 +1,18 @@
+﻿img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+figure {
+    padding: 4px;
+    margin: auto;
+}
+
+figcaption {
+    color: black;
+    font-weight: 900;
+    padding: 4px;
+    font-size:75px;
+    text-align: center;
+    font-family: Courier New, Courier, monospace;
+}
