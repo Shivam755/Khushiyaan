@@ -32,7 +32,7 @@
                         <asp:MenuItem NavigateUrl="~/Manage_Team.aspx" Text="Manage Team" Value="Our team"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Manage_Projects.aspx" Text="Manage Projects" Value="Projects"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Edit_Contact.aspx" Text="Manage Contacts" Value="Contact Us"></asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/ViewMessages.aspx" Text="View Responses" Value="How can you help?"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/View_Messages.aspx" Text="View Responses" Value="How can you help?"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
            </div>

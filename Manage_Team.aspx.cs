@@ -19,13 +19,18 @@ namespace Khushiyaan
     {
         FirestoreDb db;
         IAsyncEnumerator<Google.Cloud.Firestore.DocumentReference> types = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
-
+            if (IsPostBack)
+            {
+                LoadViewState(SaveViewState());
+            }
+            else
+            {
+                RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
+            }
         }
-
         public async Task ShowDocsAsync()
         {
             //Creating connection
@@ -68,8 +73,6 @@ namespace Khushiyaan
                 //Adding row to table
                 Members.Rows.Add(row);
             }
-
-            SaveViewState();
         }
 
         protected async void delete_Click(object sender, EventArgs e)
@@ -88,6 +91,11 @@ namespace Khushiyaan
                 HtmlTableCell cell = cells[0];
                 ControlCollection cont = cell.Controls;
                 System.Diagnostics.Debug.WriteLine("This is a log"+count);
+                /*CheckBox ck = (CheckBox)cont[0];
+                if (ck.Checked) {
+                    db.Collection("Team").Document(ck.ID).DeleteAsync();
+                }*/
+                
             }
             
             ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Member Deleted Sucessfully');", true);
@@ -126,6 +134,20 @@ namespace Khushiyaan
             var viewState = new object[1];
             viewState[0] = base.SaveViewState();
             return viewState;
+        }
+        protected override void LoadViewState(object savedState)
+        {
+            //load data frm saved viewstate
+            if (savedState is object[] && ((object[])savedState).Length == 1)
+            {
+                var viewState = (object[])savedState;
+                RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
+                base.LoadViewState(viewState[0]);
+            }
+            else
+            {
+                base.LoadViewState(savedState);
+            }
         }
     }
 }
