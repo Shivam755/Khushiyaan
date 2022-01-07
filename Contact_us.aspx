@@ -39,7 +39,7 @@
           <label>Email:</label>
         </div>
         <div class="form-item">
-          <textarea class="" name="message" required></textarea>
+          <textarea class="" name="message" required/>
           <label>Message:</label>
         </div>
         <button class="submit-btn">Send</button> 
