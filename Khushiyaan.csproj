@@ -163,6 +163,7 @@
     <Content Include="Assets\Help_query_StyleSheet.css" />
     <Content Include="Assets\Manage_Team.css" />
     <Content Include="Assets\masterpage.css" />
+    <Content Include="Assets\about_us.css" />
     <Content Include="Assets\temporary_bg.jpg" />
     <Content Include="BasicLayout.master" />
     <Content Include="Contact_us.aspx" />
@@ -174,6 +175,7 @@
     <Content Include="Our_team.aspx" />
     <Content Include="Projects.aspx" />
     <Content Include="Assets\Admin_home.css" />
+    <Content Include="View_Messages.css" />
     <Content Include="View_Messages.aspx" />
     <Content Include="Web.config" />
     <Content Include="Admin_login.aspx" />
@@ -196,7 +198,10 @@
     <AdditionalFiles Include="Basiclayout.master.cs">
       <DependentUpon>BasicLayout.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </AdditionalFiles>
+    </Compile>
+    <Compile Include="ContactUs.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Team.cs" />
     <Compile Include="Contact_us.aspx.cs">
       <DependentUpon>Contact_us.aspx</DependentUpon>
