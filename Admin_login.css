@@ -1,32 +1,25 @@
-﻿*
-{
+﻿* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Orbitron", sans-serif;
 }
+
 body {
     /*background-image: url('https://i.imgur.com/vxXIDiJ.jpg');
-    background-repeat: no-repeat;
-    background-size: 900px 1000px;*/
-    /*background-size: cover;
-    background-position: center top;*/
-    /*justify-content: center;*/
-    background-image: linear-gradient(to right, #42275a, #734b6d);
-}
-.content {
-    /*display: flex;
+    background-size: cover;
+    background-position: center top;
+    display: flex;
     align-items: center;
-    height: 100vh;*/
+    justify-content: center;*/
+    height: 100vh;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-content: center;
     align-items: center;
     justify-content: center;
-    height: 100vh
 }
 
 .title {
@@ -73,16 +66,5 @@ form input {
 }
 
     .submit-button:hover {
-        background: rgba(255, 255, 255, .4);
+        background: rgba(255, 255, 255, .3);
     }
-
-.card {
-    /* other styles */
-    background: rgb(0 0 0 / 0.25);
-    -webkit-backdrop-filter: blur(2px);
-    /*backdrop-filter: blur(2px);*/
-    width: 900px;
-    height: auto;
-    padding: 2rem;
-    border-radius: 1rem;
-}

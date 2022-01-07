@@ -157,6 +157,7 @@
   <ItemGroup>
     <Content Include="About_us.aspx" />
     <Content Include="Admin_home.aspx" />
+    <Content Include="Admin_login.css" />
     <Content Include="Assets\BasicLayout.css" />
     <Content Include="Assets\Contact_us.css" />
     <Content Include="Assets\masterpage.css" />
