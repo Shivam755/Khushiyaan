@@ -162,6 +162,7 @@
     <Content Include="Contact_us.aspx" />
     <Content Include="Edit_Contact.aspx" />
     <Content Include="Help_query.aspx" />
+    <Content Include="Help_query_StyleSheet.css" />
     <Content Include="index.aspx" />
     <Content Include="Manage_Projects.aspx" />
     <Content Include="Manage_Team.aspx" />
