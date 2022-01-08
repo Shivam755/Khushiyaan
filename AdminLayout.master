@@ -22,7 +22,8 @@
         <div id="titley">
             <asp:Image id="Image1" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png"/>
             <div id="toptitleview">WELCOME ADMIN!!!</div>
-        </div>
+            <button id="logoutbutton"  ><i class="fas fa-sign-out-alt"></i></button>
+            </div>
 
         <div id="admMenuBar">
                 <asp:Menu ID="admNavBar" runat="server" Orientation="Horizontal">
