@@ -17,17 +17,18 @@ body {
     padding: 1rem 3rem 1rem 3rem;
     padding: 1rem 3rem 1rem 3rem;
     font-family: 'Baskerville Old Face';
-    font-size: 25px;
+    font-size: 20px;
+    margin: 0rem 1rem;
 }
 
 .abtcontent {
     display: flex;
     align-content: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     background-color: floralwhite;
     font-family: 'Merriweather', serif;
-    font-size: 18px;
+    font-size: 14px;
     padding: 1rem 3rem 1rem 3rem;
 }
 
@@ -35,7 +36,7 @@ body {
     display: flex;
     align-content: center;
     flex-direction: row;
-    justify-content:center;
+    justify-content:space-around;
 }
 
 #Content {

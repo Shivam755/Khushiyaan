@@ -32,35 +32,42 @@ form{
     display: flex;
     flex-direction: row;
     align-items: center;
-    align-content: center;
     justify-content: space-around;
-    justify-items: center;
-    background-color: rosybrown;
+    /*justify-items: center;*/
+    background-color: #EFBB62;
 }
 #toptitleview {
     display: flex;
-    background-color:blueviolet;
-    font-family:Algerian;
+    flex-direction: row;
+    background-color:inherit;
+    font-family: Algerian;
+    font-size: 35px;
 }
+
 #toptitleview1{
     display: flex;
     background-color: blueviolet;
     font-family: Algerian;
 }
+
 #Image1 {
-    display: flex;
-    background-color: blueviolet;
+    display:flex;
+    flex-direction:row;
+    border-radius: 5%;
+    margin: 10px;
+    width: 230px;
+    height: 100px;
 }
 
 #adminfoot {
-    background-color: violet;
+    background-color: #EFBB62;
 }
 
 
 #admMenuBar {
     display: flex;
     flex-direction: row;
-    background-color: #c405ff;
+    background-color: #2558C8;
     font-size: 20px;
     justify-content: space-between;
     align-items: center;
@@ -76,12 +83,28 @@ form{
     }
 
     #admNavBar ul :hover {
-        background-color: #40ff05;
+        background-color: #f144d4;
         border-radius: 5%;
-        color: #c405ff;
+        color: #44F161;
     }
 
     #admNavBar ul li a {
         padding: 10px 10px 10px 10px;
-        color: #ffc405;
+        color: #EFBB62;
+    }
+
+
+#logoutbutton{
+    display: flex;
+    flex-direction:row;
+    background-color:red;
+    color: black;
+    width: 3rem;
+    height: 3rem;
+}
+
+    #logoutbutton i {
+        color: black;
+        height: 40px;
+        width: 40px;
     }
