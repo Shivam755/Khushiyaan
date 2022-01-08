@@ -15,30 +15,30 @@ namespace Khushiyaan
     {
 
         /// <summary>
-        /// address control.
+        /// RegisteredAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl address;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl RegisteredAddress;
 
         /// <summary>
-        /// email control.
+        /// Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl email;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Email;
 
         /// <summary>
-        /// contactno control.
+        /// ContactNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contactno;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContactNo;
     }
 }

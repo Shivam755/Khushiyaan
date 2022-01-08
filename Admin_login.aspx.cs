@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Khushiyaan
 {
-    public partial class WebForm1 : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class Admin_login : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }

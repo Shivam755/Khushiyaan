@@ -16,14 +16,7 @@ namespace Khushiyaan
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-                LoadViewState(SaveViewState());
-            }
-            else
-            {
-                RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
-            }
+            RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
 
         }
 
@@ -39,12 +32,25 @@ namespace Khushiyaan
             IAsyncEnumerator<DocumentReference> contact = db.Collection("Contact Us Info").ListDocumentsAsync().GetAsyncEnumerator();
             await foreach (DocumentReference docref in contact)
             {
+                if (docref.Id.Equals("Social") || docref.Id.Equals("HeadOffice"))
+                    continue;
                 DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
                 ContactUs view = docsnap.ConvertTo<ContactUs>();
-                address.InnerHtml = view.RegisteredAddress;
-                email.InnerHtml = view.Email;
-                contactno.InnerHtml = view.ContactNo;
-                
+                switch (docref.Id)
+                {
+                    case "ContactNo":
+                        ContactNo.InnerText = view.Value;
+                        break;
+                    case "Email":
+                        Email.InnerText = view.Value;
+                        break;
+                    case "RegisteredAddress":
+                        RegisteredAddress.InnerText = view.Value;
+                        break;
+                    default:
+                        break;
+
+                }
             }
         }
     }

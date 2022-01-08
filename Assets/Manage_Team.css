@@ -18,6 +18,7 @@ body {
 .section-title{
     font-size:30px;
     padding:10px;
+    align-self:center;
 }
 .parts{
     margin:10px;

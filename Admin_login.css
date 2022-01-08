@@ -6,12 +6,12 @@
 }
 
 body {
-    /*background-image: url('https://i.imgur.com/vxXIDiJ.jpg');
+    background-image: url('https://i.imgur.com/vxXIDiJ.jpg');
     background-size: cover;
     background-position: center top;
     display: flex;
     align-items: center;
-    justify-content: center;*/
+    justify-content: center;
     height: 100vh;
 }
 

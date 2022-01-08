@@ -1,8 +1,35 @@
 ﻿<%@ Page Async="true" Title="" Language="C#" MasterPageFile="~/AdminLayout.master" AutoEventWireup="true" CodeBehind="Manage_Team.aspx.cs" Inherits="Khushiyaan.Manage_Team" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
+    <link href="Assets/Manage_Team.css" rel="stylesheet" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1 class="section-title">Add Members</h1>
+    <div id="addForm" class="row">
+        <span class="parts">
+            Name: <input class="input" type="text" ID="Name" text="Name" runat="server" required="required"/>
+        </span>
+        <span class="parts">
+            Type: <select class="input" id="typeSel" runat="server" ></select>
+        </span>
+        <asp:Button ID="add" CssClass="submit parts" runat="server" Text="Add" OnClick="add_Click" />
+    </div>
+    <hr />
+    <h1 class="section-title">Team members: </h1>
+    <div id="tableCont" class="column">
+        <table id="Members" runat="server">
+            <tr>
+                <th>Selected</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Photo</th>
+            </tr>
+        </table>
+        <asp:Button CssClass="submit" ID="Delete" runat="server" Text="Delete Selected"/>
+    </div>
     <script type="module">
         // Import the functions you need from the SDKs you need
-        import { getFirestore,collection,deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
+        import { getFirestore, collection, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
         // TODO: Add SDKs for Firebase products that you want to use
@@ -30,7 +57,7 @@
         const onDelete = (e) => {
             e.preventDefault();
             const checks = document.querySelectorAll("input[type='checkBox']");
-            
+
             checks.forEach(check => {
                 if (check.checked) {
                     const cur = doc(contCol, check.id.split("_")[1]);
@@ -41,41 +68,15 @@
                         });
                     alert("Members deleted!!");
                 }
-                
+
             });
             return false;
         }
 
         document.getElementById("ContentPlaceHolder1_Delete").onclick = onDelete;
-        
-        
+
+
 
     </script>
-    <link href="Assets/Manage_Team.css" rel="stylesheet" />
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1 class="section-title">Add Members</h1>
-    <div id="addForm" class="row">
-        <span class="parts">
-            Name: <input class="input" type="text" ID="Name" text="Name" runat="server" required="required"/>
-        </span>
-        <span class="parts">
-            Type: <select class="input" id="typeSel" runat="server" ></select>
-        </span>
-        <asp:Button ID="add" CssClass="submit parts" runat="server" Text="Add" OnClick="add_Click" />
-    </div>
-    <hr />
-    <h1 class="section-title">Team members: </h1>
-    <div id="tableCont" class="column">
-        <table id="Members" runat="server">
-            <tr>
-                <th>Selected</th>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Photo</th>
-            </tr>
-        </table>
-        <asp:Button CssClass="submit" ID="Delete" runat="server" Text="Delete Selected"/>
-    </div>
 </asp:Content>
 
