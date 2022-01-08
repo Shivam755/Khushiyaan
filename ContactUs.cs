@@ -11,12 +11,6 @@ namespace Khushiyaan
     public partial class ContactUs
     {
         [FirestoreProperty]
-        public string RegisteredAddress { get; set; }
-
-        [FirestoreProperty]
-        public string Email { get; set; }
-
-        [FirestoreProperty]
-        public string ContactNo { get; set; }
+        public string Value { get; set; }
     }
 }

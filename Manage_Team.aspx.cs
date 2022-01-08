@@ -17,7 +17,7 @@ namespace Khushiyaan
     public partial class Manage_Team : System.Web.UI.Page
     {
         FirestoreDb db;
-        IAsyncEnumerator<Google.Cloud.Firestore.DocumentReference> types = null;
+        IAsyncEnumerator<DocumentReference> types = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -90,8 +90,8 @@ namespace Khushiyaan
                 Type = curType
             };
             DocumentReference newMem = await db.Collection("Team").AddAsync(obj);
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Member Added Sucessfully');", true);
-            Response.Redirect("~/Manage_Team.aspx");
+            Response.Write("<script>alert('Member Added Successfully!!!');window.location = 'Manage_Team.aspx';</script>");
+            //Response.Redirect("~/Manage_Team.aspx");
         }
 
     }
