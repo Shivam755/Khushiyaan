@@ -61,10 +61,13 @@ namespace Khushiyaan
                 HtmlTableRow row = new();
                 row.Attributes.Add("ID", num.ToString());
                 HtmlTableCell col1 = new(), col2 = new(), col3 = new();
+                col1.InnerHtml = view.Name;
+                col2.InnerHtml = view.Email;
+                col3.InnerHtml = view.Message;
                 row.Cells.Add(col1);
                 row.Cells.Add(col2);
                 row.Cells.Add(col3);
-                Members.Rows.Add(row);
+                Messages.Rows.Add(row);
             }
 
         }
