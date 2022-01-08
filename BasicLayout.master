@@ -10,9 +10,11 @@
     <link href="Assets/Contact_us.css" rel="stylesheet"/>
     <link href ="Assets/Admin_home.css" rel ="stylesheet" />
     <link href="Assets/BasicLayout.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server" />
+    <title>Khushiyaan </title>
     <script type="module">
         // Import the functions you need from the SDKs you need
-        import { getFirestore,collection,getDocs, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
+        import { getFirestore, collection, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
         // TODO: Add SDKs for Firebase products that you want to use
@@ -58,26 +60,21 @@
                             var medias = doc.data()["Social"];
                             //console.log(medias[0]);
                             medias.forEach((media) => {
-                                console.log(media.id);
-                                const social = collection(db, 'Social Media');
                                 getDoc(media)
                                     .then(snap => {
-                                        console.log(snap.data()["Link"]);
                                         document.getElementById(snap.id).setAttribute("href", snap.data()["Link"]);
                                     })
-                                
+
                             });
                             break;
 
                     }
-                    
+
                 }
             })
         });
 
     </script>
-    <asp:ContentPlaceHolder id="head" runat="server" />
-    <title>Khushiyaan </title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -100,9 +97,11 @@
                 <asp:HyperLink ID="donate" runat="server" NavigateUrl="https://donate.khushiyaanfoundation.org/donate" Target="_blank">Donate</asp:HyperLink>
             </div>
         </div>
+
         <div id="Content">
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
         </div>
+
         <div id="bottom">
             <div id="footer" class="row">
                 <div id="left" class="column">
@@ -127,6 +126,5 @@
         </div>
         </div>
     </form>
-    
 </body>
 </html>

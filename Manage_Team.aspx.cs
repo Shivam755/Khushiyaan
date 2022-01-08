@@ -17,7 +17,7 @@ namespace Khushiyaan
     public partial class Manage_Team : System.Web.UI.Page
     {
         FirestoreDb db;
-        IAsyncEnumerator<Google.Cloud.Firestore.DocumentReference> types = null;
+        IAsyncEnumerator<DocumentReference> types = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {

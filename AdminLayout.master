@@ -8,9 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
     <link href="Assets/Edit_Contact.css" rel="stylesheet" />
-
-
-<meta charset="utf-8" />    
+    <meta charset="utf-8" />    
     <link href="Assets/masterpage.css" rel="stylesheet"/>
     <title>Khushiyaan NGO</title>
     <asp:ContentPlaceHolder id="head" runat="server" />
@@ -41,5 +39,11 @@
         <footer id="adminfoot">&copy Copyrights 2021-2022. Made by Quality Debuggers<sup>TM</sup> | All rights reserved.</footer>
 
     </form>
+    <script>
+        if (sessionStorage.getItem("session") != "started") {
+            document.getElementById("form1").style.display = "none";
+            document.write(`<h1>403 Forbidden</h1> <p>You don't have access to these pages unless you login</p>`);
+        }
+    </script>
 </body>
 </html>
