@@ -12,8 +12,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;*/
+    height: 100vh;
     margin:0;
-    padding:0;
+    paddding:0;
 }
 
 form {
@@ -21,16 +22,6 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding:0;
-    margin:0;
-}
-#form1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
 }
 
 .title {
@@ -47,8 +38,8 @@ form input {
     letter-spacing: 3px;
     background: transparent;
     color: #fff;
-    padding: 0 0 10px 5px;
-    margin: 25px 0px;
+    padding: 0;
+    margin: 0;
     outline: none;
 }
 

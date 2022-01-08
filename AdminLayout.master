@@ -6,7 +6,7 @@
         <link href ="Admin_login.css" rel="stylesheet" />
     <link href="Assets/Admin_home.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
     <link href="Assets/Edit_Contact.css" rel="stylesheet" />
 
@@ -20,10 +20,8 @@
     <form id="form1" runat="server">
     <div>
         <div id="titley">
-
             <asp:Image id="Image1" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png"/>
             <div id="toptitleview">WELCOME ADMIN!!!</div>
-             
         </div>
 
         <div id="admMenuBar">
@@ -38,6 +36,8 @@
                     </Items>
                 </asp:Menu>
            </div>
+
+
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
         
        

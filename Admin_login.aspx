@@ -6,7 +6,7 @@
       <body>
           <div class="content">
                     <div class ="card">
-      <form>
+      <form id="form1">
           <div class="title">Admin Login</div>
           <input type="password" placeholder="Password" class="user-input">
           <input type="Submit" value="Submit" class="submit-button">
