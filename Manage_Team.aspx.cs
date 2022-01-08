@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
@@ -22,14 +21,7 @@ namespace Khushiyaan
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-                LoadViewState(SaveViewState());
-            }
-            else
-            {
-                RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
-            }
+            RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
         }
         public async Task ShowDocsAsync()
         {
@@ -75,32 +67,6 @@ namespace Khushiyaan
             }
         }
 
-        protected async void delete_Click(object sender, EventArgs e)
-        {
-            RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
-            db = FirestoreDb.Create("khushiyaan-48310");
-            int count = 0;
-            foreach(HtmlTableRow row in Members.Rows)
-            {
-                if (count == 0)
-                {
-                    count++;
-                    continue;
-                }
-                HtmlTableCellCollection cells = row.Cells;
-                HtmlTableCell cell = cells[0];
-                ControlCollection cont = cell.Controls;
-                System.Diagnostics.Debug.WriteLine("This is a log"+count);
-                /*CheckBox ck = (CheckBox)cont[0];
-                if (ck.Checked) {
-                    db.Collection("Team").Document(ck.ID).DeleteAsync();
-                }*/
-                
-            }
-            
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Member Deleted Sucessfully');", true);
-            Response.Redirect("~/Manage_Team.aspx");
-        }
         protected async void add_Click(object sender, EventArgs e)
         {
             //Getting data
@@ -124,30 +90,9 @@ namespace Khushiyaan
                 Type = curType
             };
             DocumentReference newMem = await db.Collection("Team").AddAsync(obj);
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Member Added Sucessfully');", true);
-            Response.Redirect("~/Manage_Team.aspx");
+            Response.Write("<script>alert('Member Added Successfully!!!');window.location = 'Manage_Team.aspx';</script>");
+            //Response.Redirect("~/Manage_Team.aspx");
         }
 
-        protected override object SaveViewState()
-        {
-            //save view state right after the dynamic controlss added
-            var viewState = new object[1];
-            viewState[0] = base.SaveViewState();
-            return viewState;
-        }
-        protected override void LoadViewState(object savedState)
-        {
-            //load data frm saved viewstate
-            if (savedState is object[] && ((object[])savedState).Length == 1)
-            {
-                var viewState = (object[])savedState;
-                RegisterAsyncTask(new PageAsyncTask(ShowDocsAsync));
-                base.LoadViewState(viewState[0]);
-            }
-            else
-            {
-                base.LoadViewState(savedState);
-            }
-        }
     }
 }

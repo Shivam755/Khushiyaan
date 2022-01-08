@@ -1,10 +1,37 @@
 ﻿body {
-    background-color:aliceblue;
+    background-color:white;
+    margin:0;
+    padding:0;
 }
+
+/* Whole page */
+#page {
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-between;
+    overflow-y: scroll;
+    background-color: #8fa9ff;
+}
+
+#form1{
+    margin:0;
+    padding:0;
+    justify-content:center;
+    display:inherit;
+
+}
+form{
+    margin:0;
+    padding:0;
+}
+#ContentPlaceHolder1 {
+    background-color: white;
+}
+
 #titley {
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     align-content: center;
     justify-content: space-around;
     justify-items: center;
@@ -31,16 +58,30 @@
 
 
 #admMenuBar {
-    background-color: yellowgreen;
+    display: flex;
+    flex-direction: row;
+    background-color: #c405ff;
+    font-size: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #admNavBar {
-    display: flex;
-    background-color: white;
+    align-items: center;
+    justify-content: center;
 }
-menuitem {
-    display: flex;
-    flex-direction: row;
-    color: black;
-    background-color: black;
-}
+
+    #admNavBar ul li {
+        padding: 0px 10px 0px 10px;
+    }
+
+    #admNavBar ul :hover {
+        background-color: #40ff05;
+        border-radius: 5%;
+        color: #c405ff;
+    }
+
+    #admNavBar ul li a {
+        padding: 10px 10px 10px 10px;
+        color: #ffc405;
+    }

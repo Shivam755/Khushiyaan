@@ -7,6 +7,7 @@ using System.Web.UI.HtmlControls;
 using Google.Cloud.Firestore;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace Khushiyaan
 {
@@ -27,6 +28,8 @@ namespace Khushiyaan
             int namenum = 0;
             int descnum = 0;
             int datenum = 0;
+            int photonum = 0;
+            string assetspath = "../Assets/";
             await foreach (DocumentReference docref in projects)
             {
                 DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
@@ -34,25 +37,34 @@ namespace Khushiyaan
                 namenum += 1;
                 descnum += 1;
                 datenum += 1;
-
-                HtmlGenericControl nameDiv = new HtmlGenericControl("DIV");
+                photonum += 1;
+                HtmlGenericControl nameDiv = new("DIV");
                 nameDiv.Attributes.Add("ID", "name" + namenum);
                 nameDiv.Attributes.Add("class", "nameClass");
                 nameDiv.InnerHtml = proj.Name;
                 Container.Controls.Add(nameDiv);
 
 
-                HtmlGenericControl descDiv = new HtmlGenericControl("DIV");
+                HtmlGenericControl descDiv = new("DIV");
                 descDiv.Attributes.Add("ID", "desc" + descnum);
                 descDiv.Attributes.Add("class", "descClass");
                 descDiv.InnerHtml = proj.Description;
                 Container.Controls.Add(descDiv);
 
-                HtmlGenericControl dateDiv = new HtmlGenericControl("DIV");
+                HtmlGenericControl dateDiv = new("DIV");
                 dateDiv.Attributes.Add("ID", "date" + datenum);
                 dateDiv.Attributes.Add("class", "dateClass");
-                dateDiv.InnerHtml = proj.StartedOn;
+                dateDiv.InnerHtml = proj.StartedOn.ToString();
                 Container.Controls.Add(dateDiv);
+
+                HtmlImage photoDiv = new();
+                photoDiv.Attributes.Add("src",assetspath+proj.Path);
+                photoDiv.Attributes.Add("alt", proj.Name);
+                photoDiv.Attributes.Add("runat", "server");
+                photoDiv.Attributes.Add("class", "photoClass");
+                Container.Controls.Add(photoDiv);
+                
+
             }
 
         }

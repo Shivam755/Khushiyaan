@@ -3,4 +3,5 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="Container" runat="server"></div>
+    <link href="Assets/View_Messages.css" rel="stylesheet"/>
 </asp:Content>

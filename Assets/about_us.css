@@ -1,0 +1,43 @@
+﻿
+body {
+    background-color: floralwhite;
+}
+
+.containcont {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    background-color: floralwhite;
+}
+.abttitle {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    background-color: deepskyblue;
+    padding: 1rem 3rem 1rem 3rem;
+    padding: 1rem 3rem 1rem 3rem;
+    font-family: 'Baskerville Old Face';
+    font-size: 25px;
+}
+
+.abtcontent {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: floralwhite;
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    padding: 1rem 3rem 1rem 3rem;
+}
+
+.bigcontaincont {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content:center;
+}
+
+#Content {
+    background-color: floralwhite;
+}

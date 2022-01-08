@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#"  %>
+﻿<%@ Master Language="C#" %>
 
 
 <!DOCTYPE html>
@@ -10,9 +10,74 @@
     <link href="Assets/Contact_us.css" rel="stylesheet"/>
     <link href ="Assets/Admin_home.css" rel ="stylesheet" />
     <link href="Assets/BasicLayout.css" rel="stylesheet" />
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { getFirestore,collection,getDocs, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
 
-     <asp:ContentPlaceHolder id="head" runat="server" />
-    <title>Khushiyaan</title>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCVC_QyeHJr_FfBB3Ffvks7PPcn5Gg8AYI",
+            authDomain: "khushiyaan-48310.firebaseapp.com",
+            projectId: "khushiyaan-48310",
+            storageBucket: "khushiyaan-48310.appspot.com",
+            messagingSenderId: "213055695762",
+            appId: "1:213055695762:web:68824895488aa66eb96f4b",
+            measurementId: "G-KPTTYTC4SX"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+
+        const contCol = collection(db, 'Contact Us Info');
+
+        getDocs(contCol).then(snapshot => {
+            snapshot.forEach(doc => {
+                if (doc.exists()) {
+
+                    switch (doc.id) {
+                        case "HeadOffice":
+                            document.getElementById(doc.id).innerText = doc.data()["Value"];
+                            break;
+                        case "RegisteredAddress":
+                            document.getElementById(doc.id).innerText = doc.data()["Value"];
+                            break;
+                        case "ContactNo":
+                            document.getElementById(doc.id).innerText = doc.data()["Value"];
+                            break;
+                        case "Email":
+                            document.getElementById(doc.id).innerText = doc.data()["Value"];
+                            break;
+                        case "Social":
+                            var medias = doc.data()["Social"];
+                            //console.log(medias[0]);
+                            medias.forEach((media) => {
+                                console.log(media.id);
+                                const social = collection(db, 'Social Media');
+                                getDoc(media)
+                                    .then(snap => {
+                                        console.log(snap.data()["Link"]);
+                                        document.getElementById(snap.id).setAttribute("href", snap.data()["Link"]);
+                                    })
+                                
+                            });
+                            break;
+
+                    }
+                    
+                }
+            })
+        });
+
+    </script>
+    <asp:ContentPlaceHolder id="head" runat="server" />
+    <title>Khushiyaan </title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -41,26 +106,27 @@
         <div id="bottom">
             <div id="footer" class="row">
                 <div id="left" class="column">
-                    <p>Registered Address:<span id="RegAddr"></span></p>
-                    <p>Head Office:<span id="HeadAddr"></span></p>
+                    <p><b>Registered Address:</b> <span id="RegisteredAddress"></span></p>
+                    <p><b>Head Office:</b> <span id="HeadOffice"></span></p>
                 </div>
                 <div id="mid" class="column">
-                    <p><i class="fas fa-phone"></i><span id="ContNO"></span></p>
-                    <p><i class="far fa-envelope"></i><span id="Email Id"></span></p>
+                    <p><i class="fas fa-phone"></i> <span id="ContactNo"></span></p>
+                    <p><i class="far fa-envelope"></i> <span id="Email"></span></p>
                     <h3>Connect with us</h3>
                     <div id="Social" class="row">
-                        <asp:HyperLink ID="Fb" runat="server" ><i class="fab fa-facebook"></i></asp:HyperLink>
-                        <asp:HyperLink ID="Twt" runat="server" ><i class="fab fa-twitter"></i></asp:HyperLink>
-                        <asp:HyperLink ID="Insta" runat="server" ><i class="fab fa-instagram"></i></asp:HyperLink>
+                        <asp:HyperLink ID="Facebook" runat="server" ><i class="fab fa-facebook"></i></asp:HyperLink>
+                        <asp:HyperLink ID="Twitter" runat="server" ><i class="fab fa-twitter"></i></asp:HyperLink>
+                        <asp:HyperLink ID="Instagram" runat="server" ><i class="fab fa-instagram"></i></asp:HyperLink>
                     </div>
                 </div>
                 <div id="right" class="column">
-                    <asp:Button ID="admin" runat="server" Text="Admin Login" />
+                    <asp:HyperLink ID="admin" runat="server" NavigateUrl="~/Admin_login.aspx">Admin Login</asp:HyperLink>
                 </div>
             </div>
             <div id="copyright">&copy Copyrights 2021-2022. Made by Quality Debuggers<sup>TM</sup> | All rights reserved.</div>
         </div>
         </div>
     </form>
+    
 </body>
 </html>
