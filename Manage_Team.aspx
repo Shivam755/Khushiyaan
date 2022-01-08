@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="module">
         // Import the functions you need from the SDKs you need
-        import { getFirestore,collection,getDocs, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
+        import { getFirestore,collection,deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
         // TODO: Add SDKs for Firebase products that you want to use
@@ -26,10 +26,28 @@
         const db = getFirestore(app);
 
         const contCol = collection(db, 'Team');
+
         const onDelete = (e) => {
             e.preventDefault();
-
+            const checks = document.querySelectorAll("input[type='checkBox']");
+            
+            checks.forEach(check => {
+                if (check.checked) {
+                    const cur = doc(contCol, check.id.split("_")[1]);
+                    //Removing prefix
+                    deleteDoc(cur)
+                        .then(del => {
+                            document.querySelector("tbody").removeChild(check.parentElement.parentElement);
+                        });
+                    alert("Members deleted!!");
+                }
+                
+            });
+            return false;
         }
+
+        document.getElementById("ContentPlaceHolder1_Delete").onclick = onDelete;
+        
         
 
     </script>
@@ -48,6 +66,7 @@
     </div>
     <hr />
     <h1 class="section-title">Team members: </h1>
+    <div id="tableCont" class="column">
         <table id="Members" runat="server">
             <tr>
                 <th>Selected</th>
@@ -57,5 +76,6 @@
             </tr>
         </table>
         <asp:Button CssClass="submit" ID="Delete" runat="server" Text="Delete Selected"/>
+    </div>
 </asp:Content>
 
