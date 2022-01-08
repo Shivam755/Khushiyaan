@@ -78,13 +78,16 @@
 .photo-gallery{
     width: 90%;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 50px;
-    grid-gap: 70px;
+}
+.photo-gallery .pic{
+    flex: 1 1 400px;
+    margin: 20px;
 }
 .pic{
-    position: relative;
     height: 230px;
     border-radius: 10px;
     box-shadow: 3px 3px 5px lightgray;
@@ -149,9 +152,10 @@
 }
 .containeri{
     position:relative;
-    width: 1200px;
+    width: 800px;
     height: 300px;
     margin: 240px auto;
+    align-items: center;
 }
 .containeri .box{
     position: relative;
@@ -232,7 +236,25 @@
 .containeri .box:nth-child(2){
     background: #f54967;
 }
-
+.aR{
+    position:relative;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 5px 5px 5px;
+    color: #2196f3;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+.aR:hover{
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: 0.5s;
+}
 
 
 
