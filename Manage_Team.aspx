@@ -22,10 +22,10 @@
                 <th>Selected</th>
                 <th>Name</th>
                 <th>Type</th>
-                <th>Photo</th>
             </tr>
         </table>
-        <asp:Button CssClass="submit" ID="Delete" runat="server" Text="Delete Selected"/>
+        <div id="btnCont"><asp:Button CssClass="submit" ID="Delete" runat="server" Text="Delete Selected"/></div>
+        
     </div>
     <script type="module">
         // Import the functions you need from the SDKs you need

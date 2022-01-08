@@ -1,23 +1,29 @@
-﻿*{
+﻿body{
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+*{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Courier New';
 }
-input{
+.inputR{
     display: none;
 }
 .container{
     width: 100%;
     text-align: center;
 }
-h1{
+.h1R{
     font-weight: normal;
     font-size: 35px;
     position: relative;
     margin: 40px 0;
 }
-h1::before{
+.h1R::before{
     content: '';
     position: absolute;
     width: 100px;
@@ -49,14 +55,14 @@ h1::before{
     border-radius: 5px;
     box-shadow: 3px 3px 5px lightgray;
 }
-h3{
+.h3R{
     height: 100%;
     background-color: rgb(221,221,221);
     line-height: 60px;
     padding: 0 50px;
     color: white;
 }
-label{
+.labelR{
     display: inline-block;
     height: 100%;
     margin: 0 20px;
@@ -66,19 +72,22 @@ label{
     cursor: pointer;
     transition: color .5s;
 }
-label:hover{
+.labelR:hover{
     color: black;
 }
 .photo-gallery{
     width: 90%;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 50px;
-    grid-gap: 70px;
+}
+.photo-gallery .pic{
+    flex: 1 1 400px;
+    margin: 20px;
 }
 .pic{
-    position: relative;
     height: 230px;
     border-radius: 10px;
     box-shadow: 3px 3px 5px lightgray;
@@ -143,9 +152,10 @@ label:hover{
 }
 .containeri{
     position:relative;
-    width: 1200px;
+    width: 800px;
     height: 300px;
     margin: 240px auto;
+    align-items: center;
 }
 .containeri .box{
     position: relative;
@@ -226,26 +236,25 @@ label:hover{
 .containeri .box:nth-child(2){
     background: #f54967;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.aR{
+    position:relative;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 5px 5px 5px;
+    color: #2196f3;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+.aR:hover{
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: 0.5s;
+}
 
 
 
