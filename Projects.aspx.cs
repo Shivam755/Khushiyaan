@@ -7,6 +7,7 @@ using System.Web.UI.HtmlControls;
 using Google.Cloud.Firestore;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace Khushiyaan
 {
@@ -19,6 +20,7 @@ namespace Khushiyaan
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
             db = FirestoreDb.Create("khushiyaan-48310");
             RegisterAsyncTask(new PageAsyncTask(getProjectDoc));
+            System.Diagnostics.Debug.WriteLine(Server.MapPath("~/Assets/"));
         }
         public async Task getProjectDoc()
         {
@@ -27,6 +29,8 @@ namespace Khushiyaan
             int namenum = 0;
             int descnum = 0;
             int datenum = 0;
+            int photonum = 0;
+            string assetspath = Server.MapPath("~/Assets");
             await foreach (DocumentReference docref in projects)
             {
                 DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
@@ -34,7 +38,7 @@ namespace Khushiyaan
                 namenum += 1;
                 descnum += 1;
                 datenum += 1;
-
+                photonum += 1;
                 HtmlGenericControl nameDiv = new HtmlGenericControl("DIV");
                 nameDiv.Attributes.Add("ID", "name" + namenum);
                 nameDiv.Attributes.Add("class", "nameClass");
@@ -53,6 +57,15 @@ namespace Khushiyaan
                 dateDiv.Attributes.Add("class", "dateClass");
                 dateDiv.InnerHtml = proj.StartedOn.ToString();
                 Container.Controls.Add(dateDiv);
+
+                HtmlImage photoDiv = new();
+                photoDiv.Attributes.Add("src",Path.Combine(assetspath, proj.Path));
+                photoDiv.Attributes.Add("alt", proj.Name);
+                photoDiv.Attributes.Add("runat", "server");
+                photoDiv.Attributes.Add("class", "photoClass");
+                Container.Controls.Add(photoDiv);
+                
+
             }
 
         }
