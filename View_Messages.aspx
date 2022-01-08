@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="heading">Message Responses</div>
     <div id="Container" runat="server"></div>
     <link href="Assets/View_Messages.css" rel="stylesheet"/>
 </asp:Content>

@@ -24,35 +24,47 @@ namespace Khushiyaan
         {
             //Getting data for table
             IAsyncEnumerator<DocumentReference> responses = db.Collection("Responses ").ListDocumentsAsync().GetAsyncEnumerator();
-            int namenum = 0;
-            int messagenum = 0;
-            int emailnum = 0;
+            int num = 0;
             await foreach (DocumentReference docref in responses)
             {
                 DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
                 ViewMessages view = docsnap.ConvertTo<ViewMessages>();
-                namenum += 1;
-                messagenum += 1;
-                emailnum += 1;
-                    
-                HtmlGenericControl nameDiv = new HtmlGenericControl("DIV");
-                nameDiv.Attributes.Add("ID", "name"+namenum);
+                num += 1;
+
+                HtmlGenericControl parent= new("DIV");
+                parent.Attributes.Add("ID", "parent" + num);
+                parent.Attributes.Add("class", "parentClass");
+                Container.Controls.Add(parent);
+
+                HtmlGenericControl res = new("DIV");
+                res.Attributes.Add("class", "resClass");
+                res.InnerHtml = "Response "+num;
+
+                HtmlGenericControl nameDiv = new("DIV");
                 nameDiv.Attributes.Add("class", "nameClass");
-                nameDiv.InnerHtml = view.Name;
-                Container.Controls.Add(nameDiv);
+                nameDiv.InnerHtml += view.Name;
 
-
-                HtmlGenericControl messageDiv = new HtmlGenericControl("DIV");
-                messageDiv.Attributes.Add("ID", "message"+messagenum);
+                HtmlGenericControl messageDiv = new("DIV");
                 messageDiv.Attributes.Add("class", "messageClass");
                 messageDiv.InnerHtml = view.Message;
-                Container.Controls.Add(messageDiv);
 
                 HtmlGenericControl emailDiv = new HtmlGenericControl("DIV");
-                emailDiv.Attributes.Add("ID", "email"+emailnum);
                 emailDiv.Attributes.Add("class", "emailClass");
                 emailDiv.InnerHtml = view.Email;
-                Container.Controls.Add(emailDiv);
+                parent.Controls.Add(res);
+                parent.Controls.Add(nameDiv);
+                parent.Controls.Add(emailDiv);
+                parent.Controls.Add(messageDiv);
+
+                //TABLE
+
+                HtmlTableRow row = new();
+                row.Attributes.Add("ID", num.ToString());
+                HtmlTableCell col1 = new(), col2 = new(), col3 = new();
+                row.Cells.Add(col1);
+                row.Cells.Add(col2);
+                row.Cells.Add(col3);
+                Members.Rows.Add(row);
             }
 
         }

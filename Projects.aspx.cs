@@ -25,46 +25,40 @@ namespace Khushiyaan
         {
             //Getting data for table
             IAsyncEnumerator<DocumentReference> projects = db.Collection("Project").ListDocumentsAsync().GetAsyncEnumerator();
-            int namenum = 0;
-            int descnum = 0;
-            int datenum = 0;
-            int photonum = 0;
+            int num = 0;
             string assetspath = "../Assets/";
             await foreach (DocumentReference docref in projects)
             {
                 DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
                 Project proj = docsnap.ConvertTo<Project>();
-                namenum += 1;
-                descnum += 1;
-                datenum += 1;
-                photonum += 1;
-                HtmlGenericControl nameDiv = new("DIV");
-                nameDiv.Attributes.Add("ID", "name" + namenum);
-                nameDiv.Attributes.Add("class", "nameClass");
-                nameDiv.InnerHtml = proj.Name;
-                Container.Controls.Add(nameDiv);
+                num += 1;
 
-
-                HtmlGenericControl descDiv = new("DIV");
-                descDiv.Attributes.Add("ID", "desc" + descnum);
-                descDiv.Attributes.Add("class", "descClass");
-                descDiv.InnerHtml = proj.Description;
-                Container.Controls.Add(descDiv);
-
-                HtmlGenericControl dateDiv = new("DIV");
-                dateDiv.Attributes.Add("ID", "date" + datenum);
-                dateDiv.Attributes.Add("class", "dateClass");
-                dateDiv.InnerHtml = proj.StartedOn.ToString();
-                Container.Controls.Add(dateDiv);
+                HtmlGenericControl parent = new("DIV");
+                parent.Attributes.Add("class", "parentClass");
+                parent.Attributes.Add("ID", "parent" + num);
+                Container.Controls.Add(parent);
 
                 HtmlImage photoDiv = new();
-                photoDiv.Attributes.Add("src",assetspath+proj.Path);
+                photoDiv.Attributes.Add("src", assetspath + proj.Path);
                 photoDiv.Attributes.Add("alt", proj.Name);
                 photoDiv.Attributes.Add("runat", "server");
                 photoDiv.Attributes.Add("class", "photoClass");
-                Container.Controls.Add(photoDiv);
-                
+                parent.Controls.Add(photoDiv);
 
+                HtmlGenericControl nameDiv = new("DIV");
+                nameDiv.Attributes.Add("class", "nameClass");
+                nameDiv.InnerHtml = proj.Name;
+                parent.Controls.Add(nameDiv);
+
+                HtmlGenericControl descDiv = new("DIV");
+                descDiv.Attributes.Add("class", "descClass");
+                descDiv.InnerHtml = proj.Description;
+                parent.Controls.Add(descDiv);
+
+                HtmlGenericControl dateDiv = new("DIV");
+                dateDiv.Attributes.Add("class", "dateClass");
+                dateDiv.InnerHtml ="Started On : " + proj.StartedOn;
+                parent.Controls.Add(dateDiv);
             }
 
         }
