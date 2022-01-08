@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="module">
         // Import the functions you need from the SDKs you need
-        import { getFirestore,collection,getDocs, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
+        import { getFirestore,collection,deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
         // TODO: Add SDKs for Firebase products that you want to use
@@ -26,10 +26,27 @@
         const db = getFirestore(app);
 
         const contCol = collection(db, 'Team');
+
         const onDelete = (e) => {
             e.preventDefault();
-
+            const checks = document.querySelectorAll("input[type='checkBox']");
+            
+            checks.forEach(check => {
+                if (check.checked) {
+                    const cur = doc(contCol, check.id.split("_")[1]);
+                    //Removing prefix
+                    deleteDoc(cur)
+                        .then(del => {
+                            document.querySelector("tbody").removeChild(check.parentElement.parentElement);
+                        });
+                    alert("Members deleted!!");
+                }
+                
+            });
         }
+
+        document.getElementById("ContentPlaceHolder1_Delete").onclick = onDelete;
+        
         
 
     </script>
@@ -47,15 +64,20 @@
         <asp:Button ID="add" CssClass="submit parts" runat="server" Text="Add" OnClick="add_Click" />
     </div>
     <hr />
-    <h1 class="section-title">Team members: </h1>
-        <table id="Members" runat="server">
-            <tr>
-                <th>Selected</th>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Photo</th>
-            </tr>
-        </table>
-        <asp:Button CssClass="submit" ID="Delete" runat="server" Text="Delete Selected"/>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <h1 class="section-title">Team members: </h1>
+            <table id="Members" runat="server">
+                <tr>
+                    <th>Selected</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Photo</th>
+                </tr>
+            </table>
+            <asp:Button CssClass="submit" ID="Delete" runat="server" Text="Delete Selected"/>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>
 
