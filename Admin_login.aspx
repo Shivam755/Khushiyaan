@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_login.aspx.cs" Inherits="Khushiyaan.Admin_login" %>
+﻿<%@ Page Async="true" Language="C#" AutoEventWireup="true" CodeBehind="Admin_login.aspx.cs" Inherits="Khushiyaan.Admin_login" %>
 
 <!DOCTYPE html>
 
@@ -12,8 +12,9 @@
         <div class="content">
         <div class ="card">
             <div class="title">Admin Login</div>
-            <input type="password" placeholder="Password" class="user-input" />
-            <input type="submit" value="Submit" class="submit-button" />
+            <input id="password" type="password" placeholder="Password" class="user-input" runat="server"/>
+            <asp:Button ID="submit" runat="server" Text="Submit" class="submit-button" OnClick="submit_Click" />
+            
         </div>
     </div>
     </form>

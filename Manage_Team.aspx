@@ -66,10 +66,10 @@
                         .then(del => {
                             document.querySelector("tbody").removeChild(check.parentElement.parentElement);
                         });
-                    alert("Members deleted!!");
                 }
 
             });
+            alert("Members deleted!!");
             return false;
         }
 

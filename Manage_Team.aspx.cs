@@ -90,8 +90,8 @@ namespace Khushiyaan
                 Type = curType
             };
             DocumentReference newMem = await db.Collection("Team").AddAsync(obj);
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Member Added Sucessfully');", true);
-            Response.Redirect("~/Manage_Team.aspx");
+            Response.Write("<script>alert('Member Added Successfully!!!');window.location = 'Manage_Team.aspx';</script>");
+            //Response.Redirect("~/Manage_Team.aspx");
         }
 
     }

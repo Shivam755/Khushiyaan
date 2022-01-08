@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-        <link href ="Admin_login.css" rel="stylesheet" />
     <link href="Assets/Admin_home.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
