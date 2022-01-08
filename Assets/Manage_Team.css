@@ -37,10 +37,20 @@ body {
     border: none;
     font-size: 20px;
     padding:10px;
+    cursor:pointer;
 }
 
 #addForm{
     justify-content:space-around;
     align-items:center;
 
+}
+
+#tableCont{
+    margin:10px;
+    justify-content:center;
+}
+
+#tableCont table tbody tr td{
+    text-align:center;
 }

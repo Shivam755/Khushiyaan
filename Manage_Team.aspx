@@ -43,6 +43,7 @@
                 }
                 
             });
+            return false;
         }
 
         document.getElementById("ContentPlaceHolder1_Delete").onclick = onDelete;
@@ -64,20 +65,17 @@
         <asp:Button ID="add" CssClass="submit parts" runat="server" Text="Add" OnClick="add_Click" />
     </div>
     <hr />
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
-            <h1 class="section-title">Team members: </h1>
-            <table id="Members" runat="server">
-                <tr>
-                    <th>Selected</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Photo</th>
-                </tr>
-            </table>
-            <asp:Button CssClass="submit" ID="Delete" runat="server" Text="Delete Selected"/>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+    <h1 class="section-title">Team members: </h1>
+    <div id="tableCont" class="column">
+        <table id="Members" runat="server">
+            <tr>
+                <th>Selected</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Photo</th>
+            </tr>
+        </table>
+        <asp:Button CssClass="submit" ID="Delete" runat="server" Text="Delete Selected"/>
+    </div>
 </asp:Content>
 
