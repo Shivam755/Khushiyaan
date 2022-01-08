@@ -14,9 +14,10 @@ body {
     align-content: center;
     flex-direction: column;
     background-color: deepskyblue;
-    padding: 1rem;
+    padding: 1rem 3rem 1rem 3rem;
+    padding: 1rem 3rem 1rem 3rem;
     font-family: 'Baskerville Old Face';
-    font-size:25px;
+    font-size: 25px;
 }
 
 .abtcontent {
@@ -27,13 +28,14 @@ body {
     background-color: floralwhite;
     font-family: 'Merriweather', serif;
     font-size: 18px;
-    padding: 1rem;
+    padding: 1rem 3rem 1rem 3rem;
 }
 
 .bigcontaincont {
     display: flex;
     align-content: center;
     flex-direction: row;
+    justify-content:center;
 }
 
 #Content {

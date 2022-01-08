@@ -54,38 +54,31 @@
     <br/><br/>
     <div class="bigcontaincont">
     <div class="containcont">
-     <div class="abttitle">
+     <div class="abttitle" style=" width:300px;">
         Our Vision:
         <hr style="height:5%; width:80%; margin:0" />
      </div>
     <div class="abtcontent">
-        <br/>
+        <br />
         Keeping the above mission as our guiding light, our team has a vision of spreading
-        <br />
-       flames of immense happiness to the underprivileged women and kids by helping
-        <br/>
+        flames of immense happiness to the underprivileged women and kids by helping
         them to evolve as responsible and able citizens of the present and the future. Along
-        <br />
         with this, we believe that everyone deserves a clean environment. Our vision is to set
-        <br/>
         an example by cleaning our surroundings, spread awareness and encourage
-        <br />
         everyone to do their bit in making this world a better place to live.
         <br />
     </div>
     </div>
     
     <div class="containcont">
-        <div class="abttitle">
+        <div class="abttitle"  style=" width:200px;">
         Our Mission:
             <hr style="height:5%; width:80%; margin:0" />
      </div>
-    <div class="abtcontent">
-        <br/>
+    <div class="abtcontent" style="padding: 1rem 3rem 1rem 1rem;">
         Our prime mission is "INDIA". We relentlessly work towards a developed, healthy,
-        <br/>
         flourishing, clean and prosperous India.
-        <br/>
+
     </div>
     </div>
     </div>
