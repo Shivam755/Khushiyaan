@@ -15,14 +15,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
-        <div id="titley">
-            <asp:Image id="Image1" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png"/>
-            <div id="toptitleview">WELCOME ADMIN!!!</div>
-            <button id="logoutbutton"  ><i class="fas fa-sign-out-alt"></i></button>
+        <div>
+            <div id="titley">
+                <asp:Image id="Image1" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png"/>
+                <div id="toptitleview">WELCOME ADMIN!!!</div>
+                <button id="logoutbutton"  ><i class="fas fa-sign-out-alt"></i></button>
             </div>
 
-        <div id="admMenuBar">
+            <div id="admMenuBar">
                 <asp:Menu ID="admNavBar" runat="server" Orientation="Horizontal">
                     
                     <Items >                        
@@ -33,10 +33,12 @@
                         <asp:MenuItem NavigateUrl="~/View_Messages.aspx" Text="View Responses" Value="How can you help?"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
-           </div>
+            </div>
+        </div>
 
-
+        <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
+        </div>
         <footer id="adminfoot">&copy Copyrights 2021-2022. Made by Quality Debuggers<sup>TM</sup> | All rights reserved.</footer>
 
     </form>
