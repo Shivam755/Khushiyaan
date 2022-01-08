@@ -3,11 +3,15 @@
     <link href="Edit_Contact.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<fieldset>  
-    <figure>
-    <img src="https://apsdma.ap.gov.in/common_mns/img/contact-us.jpg" alt="logo" style="width:25%;">
+    <div class="container">
+     <figure>
+    <img src="https://www.freeiconspng.com/thumbs/contact-icon-png/contact-phone-icon-4.png" alt="logo" style="width:10%;">
   <figcaption>Edit Contact Details</figcaption>
 </figure>
-</fieldset>
-
+        <div class="info">
+           Address : <br />
+           Email-ID : <br />
+           Contact No. : <br />
+       </div>
+    </div>
 </asp:Content>
