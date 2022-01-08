@@ -20,7 +20,6 @@ namespace Khushiyaan
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
             db = FirestoreDb.Create("khushiyaan-48310");
             RegisterAsyncTask(new PageAsyncTask(getProjectDoc));
-            System.Diagnostics.Debug.WriteLine(Server.MapPath("~/Assets/"));
         }
         public async Task getProjectDoc()
         {
@@ -30,7 +29,7 @@ namespace Khushiyaan
             int descnum = 0;
             int datenum = 0;
             int photonum = 0;
-            string assetspath = Server.MapPath("~/Assets");
+            string assetspath = "../Assets/";
             await foreach (DocumentReference docref in projects)
             {
                 DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
@@ -39,27 +38,27 @@ namespace Khushiyaan
                 descnum += 1;
                 datenum += 1;
                 photonum += 1;
-                HtmlGenericControl nameDiv = new HtmlGenericControl("DIV");
+                HtmlGenericControl nameDiv = new("DIV");
                 nameDiv.Attributes.Add("ID", "name" + namenum);
                 nameDiv.Attributes.Add("class", "nameClass");
                 nameDiv.InnerHtml = proj.Name;
                 Container.Controls.Add(nameDiv);
 
 
-                HtmlGenericControl descDiv = new HtmlGenericControl("DIV");
+                HtmlGenericControl descDiv = new("DIV");
                 descDiv.Attributes.Add("ID", "desc" + descnum);
                 descDiv.Attributes.Add("class", "descClass");
                 descDiv.InnerHtml = proj.Description;
                 Container.Controls.Add(descDiv);
 
-                HtmlGenericControl dateDiv = new HtmlGenericControl("DIV");
+                HtmlGenericControl dateDiv = new("DIV");
                 dateDiv.Attributes.Add("ID", "date" + datenum);
                 dateDiv.Attributes.Add("class", "dateClass");
                 dateDiv.InnerHtml = proj.StartedOn.ToString();
                 Container.Controls.Add(dateDiv);
 
                 HtmlImage photoDiv = new();
-                photoDiv.Attributes.Add("src",Path.Combine(assetspath, proj.Path));
+                photoDiv.Attributes.Add("src",assetspath+proj.Path);
                 photoDiv.Attributes.Add("alt", proj.Name);
                 photoDiv.Attributes.Add("runat", "server");
                 photoDiv.Attributes.Add("class", "photoClass");
