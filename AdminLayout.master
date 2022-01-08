@@ -45,5 +45,11 @@
         <footer id="adminfoot">&copy Copyrights 2021-2022. Made by Quality Debuggers<sup>TM</sup> | All rights reserved.</footer>
 
     </form>
+    <script>
+        if (sessionStorage.getItem("session") != "started") {
+            document.getElementById("form1").style.display = "none";
+            document.write(`<h1>403 Forbidden</h1> <p>You don't have access to these pages unless you login</p>`);
+        }
+    </script>
 </body>
 </html>

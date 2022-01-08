@@ -4,6 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <script>
+        sessionStorage.clear();
+    </script>
     <title></title>
     <link href="Admin_login.css" rel="stylesheet" />
 </head>
@@ -14,7 +17,6 @@
             <div class="title">Admin Login</div>
             <input id="password" type="password" placeholder="Password" class="user-input" runat="server"/>
             <asp:Button ID="submit" runat="server" Text="Submit" class="submit-button" OnClick="submit_Click" />
-            
         </div>
     </div>
     </form>
