@@ -12,13 +12,13 @@
     <input class="inputR" type="radio" name="Photos" id="check3" />
     <input class="inputR" type="radio" name="Photos" id="check4" />
 
-    <div class="container">
+    <div class="container" style="height: 2000px;">
         <h1 class="h1R"> SUPPORT US </h1>
         <div class="top-content">
             <h3 class="h3R">How ? </h3>
-            <label class="labelR" for="check2">DONATION </label>
-            <label class="labelR" for="check3">BE A MEMBER </label>
-            <label class="labelR" for="check4">VOLUNTEER </label>
+            <label class="labelR" for="check2" style="display: inline-block;">DONATION </label>
+            <label class="labelR" for="check3" style="display: inline-block;">BE A MEMBER </label>
+            <label class="labelR" for="check4" style="display: inline-block;">VOLUNTEER </label>
         </div>
         <div class="photo-gallery">
             <div class="pic family">
