@@ -92,17 +92,22 @@
     }
 
 
-#logoutbutton{
+#logoutbutton {
     display: flex;
-    flex-direction:row;
-    background-color:red;
+    flex-direction: row;
+    background-color: red;
     color: black;
     width: 3rem;
     height: 3rem;
+    font-size: 30px;
+    justify-content:center;
+    align-items:center;
 }
 
     #logoutbutton i {
         color: black;
+        align-self:center;
+        justify-self:center;
         height: 40px;
         width: 40px;
     }
