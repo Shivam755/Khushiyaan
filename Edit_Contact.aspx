@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminLayout.master" AutoEventWireup="true" CodeBehind="Edit_Contact.aspx.cs" Inherits="Khushiyaan.Edit_Contact" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Edit_Contact.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="Edit_Contact.js"></script>
     <link
       rel="stylesheet"
@@ -10,13 +11,12 @@
     />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<fieldset>  
-    <figure>
-    <img src="https://apsdma.ap.gov.in/common_mns/img/contact-us.jpg" alt="logo" style="width:25%;">
-  <figcaption>Edit Contact Details</figcaption>
-</figure>
-</fieldset>
-    <div class="cont">
+    
+        <figure class="figure">
+            <img class="pic" src="https://apsdma.ap.gov.in/common_mns/img/contact-us.jpg" alt="logo" style="width:25%;" />
+            <figcaption class="figcaption">Edit Contact Details</figcaption>
+        </figure>
+        <div class="cont">
         <div class="container">
             <form id="form">
                 <div class="title">Contact Info</div>
@@ -25,17 +25,14 @@
                 * ! user name Input here
                **/ -->
       
-              <div>
                 <label for="phone" class="loginlb">Contact Number</label>
-                <i class="fas fa-phone"></i>
-                <input
-                  type="number"
-                  name="phone"
-                  class="lodinip"
-                  value=""
-                  id="phone"
-                  placeholder="Contact"
-                />
+                
+              <div class="smallcont">
+                  <div class="iconinput">
+                    <i class="fas fa-phone"></i>
+                  <input  type="number" name="phone"  class="lodinip" value="" id="phone"  placeholder="Contact" />
+                  </div>
+                  
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
                 <div class="error"></div>
@@ -45,8 +42,9 @@
                 * ! Email Input here
                **/ -->
       
-              <div>
+              
                 <label for="email" class="loginlb">Email</label>
+                <div class="smallcont"><
                 <i class="far fa-envelope"></i>
                 <input
                   type="email"
@@ -58,7 +56,7 @@
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
                 <div class="error"></div>
-              </div>
+              
       
               <!-- /** 
                 * ! Registered address Input here
@@ -147,6 +145,8 @@
             </form>
           </div>
       </div>
+    
+    
 
         <button class="submit-btn" type="submit" id="submit">Update</button> 
     </div>

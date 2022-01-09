@@ -1,15 +1,15 @@
-﻿img {
+﻿.pic {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-figure {
+.figure {
     padding: 4px;
     margin: auto;
 }
 
-figcaption {
+.figcaption {
     color: black;
     font-weight: 900;
     padding: 4px;
@@ -33,14 +33,13 @@ body {
 
 
 .container {
-    /* margin-left: 100px;   */
-    display: flex;
-    flex-direction: row;
+    margin-left: 100px;
+    
 }
+
 /**
   * ! style rules for content section
   **/
-
 .content {
     display: flex;
     flex-direction: column;
@@ -78,19 +77,44 @@ body {
     margin-bottom: 20px;
 }
 
+
+input[type="number"],input[type="text"]{
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    font-size: 1rem;
+    width: 60%;
+}
+
+
+.iconinput {
+    font-family: 'Space Mono', monospace;
+    width: 60%;
+    padding: 0.3rem 0.3rem;
+    margin: 0.5rem 0.5rem;
+    color: lightcoral;
+    border: 0.3rem solid #e95bb2;
+    border-radius: 0.3rem;
+    outline: none;
+    background-color: white;
+}
+
 #form div .lodinip {
+    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 40px;
-    border-radius: 8px;
     outline: none;
-    border: 2px solid #c4c4c4;
+    border: none;
     padding: 0 30px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 
 .loginlb {
     display: block;
     margin-bottom: 5px;
+
 }
 
 form div {
@@ -138,7 +162,6 @@ form div {
   **/
 
 form div i {
-    position: absolute;
     padding: 10px;
 }
 
@@ -184,8 +207,14 @@ form div i {
         opacity: 0.8;
     }
   
-  
-
+  .smallcont{
+      display:flex;
+      flex-direction:row;
+      background-color:deepskyblue;
+      justify-content:space-around;
+      padding:1rem;
+      margin:1rem;
+  }
 
 /* Form CSS */
 * {
