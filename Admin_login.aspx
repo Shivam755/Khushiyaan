@@ -5,7 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <script>
-        sessionStorage.clear();
+        window.onload = () => {
+            console.log(sessionStorage.getItem("session"));
+            if (sessionStorage.getItem("session") != null) {
+                window.location = "Admin_home.aspx";
+            }
+        }
     </script>
     <title></title>
     <link href="Admin_login.css" rel="stylesheet" />

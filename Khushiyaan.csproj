@@ -163,6 +163,7 @@
     <Content Include="Assets\BasicLayout.css" />
     <Content Include="Assets\beachwarriorsp2.jpg" />
     <Content Include="Assets\Contact_us.css" />
+    <Content Include="Assets\Edit_contact.js" />
     <Content Include="Assets\Help_query_StyleSheet.css" />
     <Content Include="Assets\Manage_Team.css" />
     <Content Include="Assets\masterpage.css" />
