@@ -120,7 +120,7 @@
                     </div>
                 </div>
                 <div id="right" class="column">
-                    <asp:Button ID="admin" runat="server" Text="Admin Login" />
+                    <asp:HyperLink ID="admin" runat="server" NavigateUrl="~/Admin_login.aspx">Admin Login</asp:HyperLink>
                 </div>
             </div>
             <div id="copyright">&copy Copyrights 2021-2022. Made by Quality Debuggers<sup>TM</sup> | All rights reserved.</div>

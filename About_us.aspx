@@ -1,11 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BasicLayout.master" AutoEventWireup="true" CodeBehind="About_us.aspx.cs" Inherits="Khushiyaan.About_us" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Assets/about_us.css" rel="stylesheet" />
     <div class="containcont">
+        <br/><br/>
     <div class="abttitle">
         About us:
         <hr style="height:5%; width:80%; margin:0" />
@@ -27,7 +29,7 @@
         The overwhelming response and unconditional support of the volunteers have always been our inspiration to make this world a better place than before.
     </div>
     </div>
-
+    <br/><br/>
     <div class="containcont">
     <div class="abttitle">
         Our objective:
@@ -49,41 +51,34 @@
         Care Beyond all manmade Barriers
     </div>
     </div>
-
+    <br/><br/>
     <div class="bigcontaincont">
     <div class="containcont">
-     <div class="abttitle">
+     <div class="abttitle" style=" width:300px;">
         Our Vision:
         <hr style="height:5%; width:80%; margin:0" />
      </div>
     <div class="abtcontent">
-        <br/>
+        <br />
         Keeping the above mission as our guiding light, our team has a vision of spreading
-        <br />
-       flames of immense happiness to the underprivileged women and kids by helping
-        <br/>
+        flames of immense happiness to the underprivileged women and kids by helping
         them to evolve as responsible and able citizens of the present and the future. Along
-        <br />
         with this, we believe that everyone deserves a clean environment. Our vision is to set
-        <br/>
         an example by cleaning our surroundings, spread awareness and encourage
-        <br />
         everyone to do their bit in making this world a better place to live.
         <br />
     </div>
     </div>
     
     <div class="containcont">
-        <div class="abttitle">
+        <div class="abttitle"  style=" width:200px;">
         Our Mission:
             <hr style="height:5%; width:80%; margin:0" />
      </div>
-    <div class="abtcontent">
-        <br/>
+    <div class="abtcontent" style="padding: 1rem 3rem 1rem 1rem;">
         Our prime mission is "INDIA". We relentlessly work towards a developed, healthy,
-        <br/>
         flourishing, clean and prosperous India.
-        <br/>
+
     </div>
     </div>
     </div>

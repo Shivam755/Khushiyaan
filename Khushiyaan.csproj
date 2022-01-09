@@ -157,14 +157,19 @@
   <ItemGroup>
     <Content Include="About_us.aspx" />
     <Content Include="Admin_home.aspx" />
-    <Content Include="Assets\Admin_login.css" />
+    <Content Include="Admin_login.aspx" />
+    <Content Include="Admin_login.css" />
     <Content Include="Assets\BasicLayout.css" />
+    <Content Include="Assets\beachwarriorsp2.jpg" />
     <Content Include="Assets\Contact_us.css" />
     <Content Include="Assets\Help_query_StyleSheet.css" />
     <Content Include="Assets\Manage_Team.css" />
     <Content Include="Assets\masterpage.css" />
+    <Content Include="Assets\naarishaktip2.jpg" />
+    <Content Include="Assets\projectpathshalap2.jpg" />
     <Content Include="Assets\Projects.css" />
     <Content Include="Assets\about_us.css" />
+    <Content Include="Assets\rotigharp2.jpg" />
     <Content Include="Assets\temporary_bg.jpg" />
     <Content Include="BasicLayout.master" />
     <Content Include="Contact_us.aspx" />
@@ -180,7 +185,6 @@
     <Content Include="Assets\View_Messages.css" />
     <Content Include="View_Messages.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Admin_login.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About_us.aspx.cs">
@@ -196,6 +200,13 @@
     </Compile>
     <Compile Include="Admin_home.aspx.designer.cs">
       <DependentUpon>Admin_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_login.aspx.cs">
+      <DependentUpon>Admin_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_login.aspx.designer.cs">
+      <DependentUpon>Admin_login.aspx</DependentUpon>
     </Compile>
     <Compile Include="ContactUs.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -265,13 +276,6 @@
     </Compile>
     <Compile Include="View_Messages.aspx.designer.cs">
       <DependentUpon>View_Messages.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin_login.aspx.cs">
-      <DependentUpon>Admin_login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin_login.aspx.designer.cs">
-      <DependentUpon>Admin_login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
