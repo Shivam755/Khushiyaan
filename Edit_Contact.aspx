@@ -8,6 +8,8 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -172,9 +174,68 @@
 
 
 
-                <button type="submit" id="submit">Submit</button>
+                <button type="submit" id="updatebtn">Update</button>
             </div>
         </div>
     </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { getFirestore, collection, doc, getDoc, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
 
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCVC_QyeHJr_FfBB3Ffvks7PPcn5Gg8AYI",
+            authDomain: "khushiyaan-48310.firebaseapp.com",
+            projectId: "khushiyaan-48310",
+            storageBucket: "khushiyaan-48310.appspot.com",
+            messagingSenderId: "213055695762",
+            appId: "1:213055695762:web:68824895488aa66eb96f4b",
+            measurementId: "G-KPTTYTC4SX"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+        const contCol = collection(db, 'Contact Us Info');
+        const phoneDoc = doc(db, 'Contact Us Info/ContactNo');
+        const emailDoc = doc(db, 'Contact Us Info/Email');
+        const officeDoc = doc(db, 'Contact Us Info/HeadOffice');
+        const addressDoc = doc(db, 'Contact Us Info/RegisteredAddress');
+        const socialDoc = doc(db, 'Contact Us Info/Social');
+
+
+
+
+
+        window.onload = function () {
+            document.getElementById('updatebtn').style.display = 'none';
+           // document.getElementById('updatebtn').onclick = updateInfo;
+            renderProj();
+            console.log(emailDoc.Value);
+        }
+        const phone = document.getElementById("phone");
+        const email = document.getElementById("email");
+        const regaddrs = document.getElementById("regaddrs");
+        const offaddrs = document.getElementById("offaddrs");
+        const fburl = document.getElementById("fburl");
+        const igurl = document.getElementById("igurl");
+        const twurl = document.getElementById("twurl");
+        
+        
+        async function renderProj() {
+            phone.value = await phoneDoc.data().Value;
+            email.value = await emailDoc.data().Value;
+            regaddrs.value = await addressDoc.data().Value;
+            offaddrs.value = await officeDoc.data().Value;
+            fburl.value = await socialDoc.data().Value;
+            twurl.value = await socialDoc.data().Value;
+            igurl.value = await socialDoc.data().Value;
+        }
+    </script>
 </asp:Content>
