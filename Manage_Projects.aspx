@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <h1>PROJECTS</h1>
+    <h1 class="h1pro">PROJECTS</h1>
 
         <input type="radio" name="opration" id="update" style="display: none;" />
         <input type="radio" name="opration" id="add" style="display: none;" /> 
@@ -17,12 +17,12 @@
         <div class="content">
 
             <form id="add-cafe-form">
-                <input type="text" name="Name" placeholder="project name">
-                <input type="date" name="StartedOn" placeholder="project date">
+                <input class="inputPro" type="text" name="Name" placeholder="project name" />
+                <input class="inputPro" type="date" name="StartedOn" placeholder="project date" />
                 <textarea class="description" name="Description" rows="12" cols="50" placeholder="add project description here...."></textarea>
-                <input class="photoR" name="Path" type="file" accept="image/*" capture="camera" id="cameraInput">
-                <button id="addbtn" style="margin-top: 5px;">Add project</button>
-                <button id="updatebtn" style="margin-top: 10px; margin-left: 10px;">Update project</button>
+                <input class="photoR" name="Path" type="file" accept="image/*" capture="camera" id="cameraInput" />
+                <button class="buttn" id="addbtn" style="margin-top: 5px;">Add project</button>
+                <button class="buttn" id="updatebtn" style="margin-top: 10px; margin-left: 10px;">Update project</button>
             </form>
 
             <ul id="cafe-list"></ul>

@@ -2,8 +2,7 @@
     background: #eab0dc;
     font-family: ubuntu;
 }
-
-h1{
+.h1pro{
     color: #fff;
     font-size: 64px;
     letter-spacing: 2px;
@@ -20,7 +19,7 @@ h1{
     box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
 }
 
-ul{
+#cafe-list {
     list-style-type: none;
     padding: 0;
 }
@@ -62,7 +61,7 @@ li div{
     cursor:  pointer;
 }
 
-form input{
+#add-cafe-form .inputPro, .photoR {
     float: left;
     width: 38%;
     margin: 0;
@@ -76,20 +75,20 @@ form input{
     font-family: monospace;
 }
 
-form input:focus{
+#add-cafe-form .inputPro:focus{
     outline: none;
     border-bottom: 3px solid #88236f;
     padding-bottom: 8px;
     transition: all ease 0.2s;
 }
 
-form:after{
+#add-cafe-form:after {
     content: '';
     clear: both;
     display: block;
 }
 
-button{
+.buttn {
     border: 0;
     background: #fff;
     border-radius: 10px;
