@@ -18,7 +18,7 @@
         </figure>
     <div class="cont">
         <div class="container">
-            <form id="form">
+            <div id="form">
                 <div class="title">Contact Info</div>
 
                 <!-- /** 
@@ -173,7 +173,7 @@
 
 
                 <button type="submit" id="submit">Submit</button>
-            </form>
+            </div>
         </div>
     </div>
 
