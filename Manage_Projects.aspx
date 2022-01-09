@@ -8,12 +8,6 @@
 
     <h1 class="h1pro">PROJECTS</h1>
 
-        <input class="buttn" type="radio" name="opration" id="update"/><label class="Operationa" for="add" aria-checked="true">ADD</label>
-        <input class="buttn" type="radio" name="opration" id="add" /> <label class="Operationu" for="update">UPDATE</label>
-
-        <button id="addlab" style="margin-left: 585px; width: 150px;" class="buttn"></button>
-        <button id="updatelab" style="margin-left: 50px; width: 150px;" class="buttn"></button>
-
         <div class="content">
 
             <div id="add-cafe-form">
@@ -23,6 +17,7 @@
                 <input class="photoR" id="Path" type="file" accept="image/*" capture="camera" id="cameraInput" />
                 <button class="buttn" id="addbtn" style="margin-top: 5px;">Add project</button>
                 <button class="buttn" id="updatebtn" style="margin-top: 10px; margin-left: 10px;">Update project</button>
+                <button class="buttn" id="clearbtn" style="margin-top: 10px; margin-left: 10px;">Clear</button>
             </div>
 
             <ul id="cafe-list"></ul>
@@ -46,30 +41,21 @@
 
             //Doing onload configurations
             window.onload = function () {
-                //document.getElementById('updatebtn').style.display = 'none';
-                //document.getElementById('updatebtn').onclick = submit;
+                document.getElementById('updatebtn').style.display = 'none';
+                document.getElementById('clearbtn').style.display = 'none';
+                document.getElementById('updatebtn').onclick = updateProj;
+                document.getElementById('clearbtn').onclick = clearFields;
                 document.getElementById('addbtn').onclick = addProj;
-                document.getElementById('update').onselect = yesnoCheck;
-                document.getElementById('add').onselect = yesnoCheck;
 
                 listProj();
             }
+            const fileGet = document.getElementById("Path");
+            const name = document.getElementById("Name");
+            const start = document.getElementById("StartedOn");
+            const des = document.getElementById("Description");
             const projtList = document.querySelector('#cafe-list');
             const form = document.querySelector('#add-cafe-form');
-
-            // Utility functions
-            function yesnoCheck(e) {
-                e.preventDefault();
-                if (document.getElementById('update').ariaChecked) {
-                    document.getElementById('updatebtn').style.display = 'block';
-                    document.getElementById('addbtn').style.display = 'none';
-                }
-                else if (document.getElementById('add').ariaChecked) {
-                    document.getElementById('addbtn').style.display = 'block';
-                    document.getElementById('updatebtn').style.display = 'none';
-                }
-                return false;
-            }
+            let curId;
 
             function renderProjt(doc) {
                 let li = document.createElement('li');
@@ -90,6 +76,18 @@
                 li.appendChild(Name);
                 li.appendChild(StartedOn);
                 li.appendChild(cross);
+                li.onclick = () => {
+                    //Prefilling values
+                    name.value = doc.data().Name;
+                    des.value = doc.data().Description;
+                    start.value = doc.data().StartedOn;
+                    curId = doc.id;
+
+                    //hiding and showing appropriate controls
+                    document.getElementById('updatebtn').style.display = 'block';
+                    document.getElementById('addbtn').style.display = 'none';
+                    document.getElementById('clearbtn').style.display = 'block';
+                }
 
                 projtList.appendChild(li);
 
@@ -101,6 +99,40 @@
                     listProj();
                 })
 
+            }
+
+            const updateProj = (e) => {
+                e.preventDefault();
+                //Converting image to data url
+                let file = fileGet.files[0];
+                let fileLink;
+                let imageType = /image.*/;
+
+                if (file.type.match(imageType)) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+
+                        fileLink = reader.result.toString();
+                        //Saving file in database
+                        db.collection('Project').doc(curId).update({
+                            Name: name.value,
+                            StartedOn: start.value,
+                            Description: des.value,
+                            Path: fileLink
+                        }).then(() => {
+                            console.log("success");
+                            alert("Project updated succesfully!!");
+                            projtList.replaceChildren();
+                            listProj();
+                            clearFields(e);
+                        })
+                    }
+
+                    reader.readAsDataURL(file);
+                } else {
+                    alert("Only image files can be selected!!!");
+                }
             }
 
             const listProj = () => {
@@ -115,7 +147,7 @@
                 e.preventDefault();
 
                 //Converting image to data url
-                let file = document.getElementById("Path").files[0];
+                let file = fileGet.files[0];
                 let fileLink;
                 let imageType = /image.*/;
 
@@ -127,15 +159,16 @@
                         fileLink = reader.result.toString();
                         //Saving file in database
                         db.collection('Project').add({
-                            Name: document.getElementById("Name").value,
-                            StartedOn: document.getElementById("StartedOn").value,
-                            Description: document.getElementById("Description").value,
+                            Name: name.value,
+                            StartedOn: start.value,
+                            Description: des.value,
                             Path: fileLink
                         }).then(() => {
                             console.log("success");
                             alert("Project added succesfully!!");
                             projtList.replaceChildren();
                             listProj();
+                            clearFields(e);
                         })
                     }
 
@@ -146,6 +179,17 @@
 
             }
 
+            const clearFields = (e) => {
+                e.preventDefault();
+                name.value = "";
+                start.value = "";
+                des.value = "";
+                fileGet.fields = [];
+                document.getElementById('updatebtn').style.display = 'none';
+                document.getElementById('clearbtn').style.display = 'none';
+                document.getElementById('addbtn').style.display = 'block';
+                return false;
+            }
 
         </script>
 
