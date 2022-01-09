@@ -83,7 +83,7 @@
     <script>
         $(function () {
             //value for animation  
-            var width = 900;
+            var width = 1200;
             var animationSpeed = 3000;
             var pause = 5000;
             var currentSlide = 1;
