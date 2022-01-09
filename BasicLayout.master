@@ -12,7 +12,7 @@
     <link href ="Assets/Admin_home.css" rel ="stylesheet" />
     <link href="Assets/BasicLayout.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server" />
-    <link href="Help_query_StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/Help_query_StyleSheet.css" rel="stylesheet" type="text/css" />
     <title>Khushiyaan </title>
     <script type="module">
         // Import the functions you need from the SDKs you need

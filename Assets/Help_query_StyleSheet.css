@@ -62,17 +62,16 @@
     padding: 0 50px;
     color: white;
 }
-.labelR{
+.labelHelp {
     display: inline-block;
-    height: 100%;
-    margin: 0 20px;
+    height: 50%;
     line-height: 60px;
     font-size: 18px;
     color: gray;
     cursor: pointer;
     transition: color .5s;
 }
-.labelR:hover{
+.labelHelp:hover{
     color: black;
 }
 .photo-gallery{
