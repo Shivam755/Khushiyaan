@@ -6,7 +6,11 @@
 }
 
 body {
+<<<<<<< HEAD:assets/Admin_login.css
     background-image: linear-gradient(to right, #42275a, #734b6d);
+=======
+    background-image: url('https://i.imgur.com/vxXIDiJ.jpg');
+>>>>>>> dd2d602b733b4c38dc2cd796edc420df14e8d931:Admin_login.css
     background-size: cover;
     background-position: center top;
     display: flex;
@@ -19,8 +23,23 @@ body {
 form {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD:assets/Admin_login.css
 /*    align-items: center;
 */    justify-content: center;
+=======
+    align-items: center;
+    justify-content: center;
+    padding:0;
+    margin:0;
+}
+#form1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+>>>>>>> dd2d602b733b4c38dc2cd796edc420df14e8d931:Admin_login.css
 }
 
 .title {
