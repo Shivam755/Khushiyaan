@@ -17,7 +17,7 @@ namespace Khushiyaan
         public string Description { get; set; }
 
         [FirestoreProperty]
-        public DateTime StartedOn { get; set; }
+        public string StartedOn { get; set; }
         
         [FirestoreProperty]
         public string Path { get; set; }

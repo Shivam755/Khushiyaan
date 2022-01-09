@@ -24,37 +24,34 @@ namespace Khushiyaan
         {
             //Getting data for table
             IAsyncEnumerator<DocumentReference> responses = db.Collection("Responses ").ListDocumentsAsync().GetAsyncEnumerator();
-            int namenum = 0;
-            int messagenum = 0;
-            int emailnum = 0;
+            int num = 0;
             await foreach (DocumentReference docref in responses)
             {
                 DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
                 ViewMessages view = docsnap.ConvertTo<ViewMessages>();
-                namenum += 1;
-                messagenum += 1;
-                emailnum += 1;
-                    
-                HtmlGenericControl nameDiv = new HtmlGenericControl("DIV");
-                nameDiv.Attributes.Add("ID", "name"+namenum);
-                nameDiv.Attributes.Add("class", "nameClass");
-                nameDiv.InnerHtml = view.Name;
-                Container.Controls.Add(nameDiv);
+                num += 1;
 
 
-                HtmlGenericControl messageDiv = new HtmlGenericControl("DIV");
-                messageDiv.Attributes.Add("ID", "message"+messagenum);
-                messageDiv.Attributes.Add("class", "messageClass");
-                messageDiv.InnerHtml = view.Message;
-                Container.Controls.Add(messageDiv);
 
-                HtmlGenericControl emailDiv = new HtmlGenericControl("DIV");
-                emailDiv.Attributes.Add("ID", "email"+emailnum);
-                emailDiv.Attributes.Add("class", "emailClass");
-                emailDiv.InnerHtml = view.Email;
-                Container.Controls.Add(emailDiv);
+                //TABLE
+
+                HtmlTableRow row = new();
+                row.Attributes.Add("ID", num.ToString());
+                HtmlTableCell col1 = new(), col2 = new(), col3 = new(), col4 = new();
+                col1.Attributes.Add("class","nameClass");
+                col2.Attributes.Add("class", "emailClass");
+                col3.Attributes.Add("class", "messageClass");
+                col4.InnerHtml = num.ToString(); 
+                row.Attributes.Add("cell-padding", "5px");
+                col1.InnerHtml = view.Name;
+                col2.InnerHtml ="<a href='#'>"+view.Email+"</a>";
+                col3.InnerHtml = view.Message;
+                row.Cells.Add(col4);
+                row.Cells.Add(col1);
+                row.Cells.Add(col2);
+                row.Cells.Add(col3);
+                Messages.Rows.Add(row);
             }
-
         }
     }
 }

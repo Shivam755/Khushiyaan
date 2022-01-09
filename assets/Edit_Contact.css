@@ -17,7 +17,258 @@ figcaption {
     text-align: center;
     font-family: Courier New, Courier, monospace;
 }
+/**
+* ! changing default styles of brower
+**/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
 
 
+.container {
+    /* margin-left: 100px;   */
+    display: flex;
+    flex-direction: row;
+}
+/**
+  * ! style rules for content section
+  **/
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #f2796e;
+    width: 55%;
+    min-height: 100vh;
+    padding: 10px 20px;
+}
 
 
+.text {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+/**
+  * ! style rules for form section
+  **/
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+    /* max-width: 400px; */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#form div .lodinip {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid #c4c4c4;
+    padding: 0 30px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loginlb {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form div {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.lodinip:focus {
+    border: 2px solid #f2796e;
+}
+
+/**
+  * ! style rules for social section
+  **/
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.btn-1,
+.btn-2 {
+    padding: 10px 5px;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #c4c4c4;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.btn-2 {
+    background-color: #4f70b5;
+    color: white;
+}
+
+
+/**
+  * ! style rules for form icons
+  **/
+
+form div i {
+    position: absolute;
+    padding: 10px;
+}
+
+.success-icon,
+.failure-icon {
+    right: 0;
+    opacity: 0;
+}
+
+.failure-icon,
+.error {
+    color: red;
+}
+
+.success-icon {
+    color: green;
+}
+
+.error {
+    font-size: 14.5px;
+    margin-top: 5px;
+}
+
+/**
+  * ! style rules for button 
+  **/
+
+#submit {
+    margin-top: 15px;
+    width: 100%;
+    height: 45px;
+    background-color: #f2796e;
+    border: 2px solid #f2796e;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s ease;
+}
+
+    #submit:hover {
+        opacity: 0.8;
+    }
+  
+  
+
+
+/* Form CSS */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.contact-box {
+    background-color: #6a9ac4;
+    width: clamp(100px, 90%, 1000px);
+    margin: 80px 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.contact-form-wrapper {
+    background-color: #ffffff8f;
+    border-radius: 0 10px 10px 0;
+    width: 50%;
+    padding: 8% 5% 10% 5%;
+}
+
+.submit-btn {
+    background-color: #fd917e;
+    filter: drop-shadow(2px 2px 3px #0003);
+    color: #fff;
+    font-family: "Poppins",sans-serif;
+    font-size: clamp(16px, 1.6vw, 18px);
+    display: block;
+    padding: 12px 20px;
+    margin: 2px auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+}
+
+
+.submit-btn:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.submit-btn:active {
+    transform: scale(1.1, 1.1);
+    filter: sepia(0.5);
+}
+
+
+.form-item {
+    position: relative;
+}
+
+label, input, textarea {
+    font-family: 'Poppins', sans-serif;
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 2%;
+    color: #999;
+    font-size: clamp(14px, 1.5vw, 18px);
+    pointer-events: none;
+    user-select: none;
+}
+
+input, textarea {
+    width: 100%;
+    outline: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 12px;
+    font-size: clamp(15px, 1.5vw, 18px);
+}
+
+    input:focus + label,
+    input:valid + label, 
+    textarea:focus + label,
+    textarea:valid + label {
+        font-size: clamp(13px, 1.3vw, 16px);
+        color: #777;
+        top: -20px;
+        transition: all .225s ease;
+    }

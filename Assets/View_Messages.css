@@ -3,4 +3,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 
-
+.heading {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    font-size: 3vw;
+}
+.nameClass{
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.resClass {
+    color: chocolate;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    width: 500px;
+    align-content: center;
+    position: center;
+    width: 100vw;
+    font-weight: 500;
+    word-spacing: 10px;
+    font-size: 20px;
+    padding:10px;
+}
+th {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    color:red;
+}
+th, td{
+    padding:5px;
+}
+.emailClass{
+    font-style:italic;
+}
+a{
+    text-decoration:none;
+}
+table {
+   height:auto;
+   width:90vw;
+   text-align:center;
+}
+#tableCont{
+    padding:15px;
+}
