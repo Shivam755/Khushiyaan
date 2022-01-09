@@ -26,12 +26,10 @@
             </div>
 
             <ul id="cafe-list"></ul>
-
         </div>
 
         <script>
             // Initialize Firebase
-            
             var config = {
                 apiKey: "AIzaSyCVC_QyeHJr_FfBB3Ffvks7PPcn5Gg8AYI",
                 authDomain: "khushiyaan-48310.firebaseapp.com",
@@ -46,17 +44,20 @@
             const db = firebase.firestore();
             db.settings({ timestampsInSnapshots: true });
 
-
+            //Doing onload configurations
             window.onload = function () {
                 //document.getElementById('updatebtn').style.display = 'none';
-                document.getElementById('updatebtn').onclick = submit;
-                document.getElementById('addbtn').onclick = submit;
+                //document.getElementById('updatebtn').onclick = submit;
+                document.getElementById('addbtn').onclick = addProj;
                 document.getElementById('update').onselect = yesnoCheck;
                 document.getElementById('add').onselect = yesnoCheck;
 
                 listProj();
             }
+            const projtList = document.querySelector('#cafe-list');
+            const form = document.querySelector('#add-cafe-form');
 
+            // Utility functions
             function yesnoCheck(e) {
                 e.preventDefault();
                 if (document.getElementById('update').ariaChecked) {
@@ -69,13 +70,6 @@
                 }
                 return false;
             }
-
-
-
-
-
-            const projtList = document.querySelector('#cafe-list');
-            const form = document.querySelector('#add-cafe-form');
 
             function renderProjt(doc) {
                 let li = document.createElement('li');
@@ -117,19 +111,39 @@
                 })
             }
             
-            const submit = (e) => {
+            const addProj = (e) => {
                 e.preventDefault();
-                db.collection('Project').add({
-                    Name: document.getElementById("Name").value,
-                    StartedOn: document.getElementById("StartedOn").value,
-                    Description: document.getElementById("Description").value,
-                    Path: document.getElementById("Path").value
-                }).then(() => {
-                    console.log("success");
-                    alert("Project added succesfully!!");
-                    projtList.replaceChildren();
-                    listProj();
-                })
+
+                //Converting image to data url
+                let file = document.getElementById("Path").files[0];
+                let fileLink;
+                let imageType = /image.*/;
+
+                if (file.type.match(imageType)) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+
+                        fileLink = reader.result.toString();
+                        //Saving file in database
+                        db.collection('Project').add({
+                            Name: document.getElementById("Name").value,
+                            StartedOn: document.getElementById("StartedOn").value,
+                            Description: document.getElementById("Description").value,
+                            Path: fileLink
+                        }).then(() => {
+                            console.log("success");
+                            alert("Project added succesfully!!");
+                            projtList.replaceChildren();
+                            listProj();
+                        })
+                    }
+
+                    reader.readAsDataURL(file);
+                } else {
+                    alert("Only image files can be selected!!!");
+                }
+
             }
 
 
