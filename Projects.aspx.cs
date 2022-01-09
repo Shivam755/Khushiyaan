@@ -26,7 +26,6 @@ namespace Khushiyaan
             //Getting data for table
             IAsyncEnumerator<DocumentReference> projects = db.Collection("Project").ListDocumentsAsync().GetAsyncEnumerator();
             int num = 0;
-            string assetspath = "../Assets/";
             await foreach (DocumentReference docref in projects)
             {
                 DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
@@ -49,7 +48,7 @@ namespace Khushiyaan
                 parent.Controls.Add(parentCon);
 
                 HtmlImage photoDiv = new();
-                photoDiv.Attributes.Add("src", assetspath + proj.Path);
+                photoDiv.Attributes.Add("src", proj.Path);
                 photoDiv.Attributes.Add("alt", proj.Name);
                 photoDiv.Attributes.Add("runat", "server");
                 photoDiv.Attributes.Add("class", "photoClass");
