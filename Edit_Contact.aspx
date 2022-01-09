@@ -16,139 +16,165 @@
             <img class="pic" src="https://apsdma.ap.gov.in/common_mns/img/contact-us.jpg" alt="logo" style="width:25%;" />
             <figcaption class="figcaption">Edit Contact Details</figcaption>
         </figure>
-        <div class="cont">
+    <div class="cont">
         <div class="container">
             <form id="form">
                 <div class="title">Contact Info</div>
-      
-              <!-- /** 
+
+                <!-- /** 
                 * ! user name Input here
                **/ -->
-      
+
                 <label for="phone" class="loginlb">Contact Number</label>
-                
-              <div class="smallcont">
-                  <div class="iconinput">
-                    <i class="fas fa-phone"></i>
-                  <input  type="number" name="phone"  class="lodinip" value="" id="phone"  placeholder="Contact" />
-                  </div>
-                  
-                <i class="fas fa-exclamation-circle failure-icon"></i>
-                <i class="far fa-check-circle success-icon"></i>
-                <div class="error"></div>
-              </div>
-      
-              <!-- /** 
+
+                <div class="smallcont">
+                    <div class="iconinput">
+                        <i class="fas fa-phone"></i>
+                        <input type="number" name="phone" class="lodinip" value="" id="phone" placeholder="Contact" />
+                    </div>
+
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
+                </div>
+
+                <!-- /** 
                 * ! Email Input here
                **/ -->
-      
-              
+
+
                 <label for="email" class="loginlb">Email</label>
-                <div class="smallcont"><
-                <i class="far fa-envelope"></i>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  class="lodinip"
-                  placeholder="abc@gmail.com"
-                />
-                <i class="fas fa-exclamation-circle failure-icon"></i>
-                <i class="far fa-check-circle success-icon"></i>
-                <div class="error"></div>
-              
-      
-              <!-- /** 
+                <div class="smallcont">
+                    <div class="iconinput">
+                        <i class="far fa-envelope"></i>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            class="lodinip"
+                            placeholder="abc@gmail.com" />
+                    </div>
+
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
+                </div>
+
+
+
+                <!-- /** 
                 * ! Registered address Input here
                **/ -->
-      
-              <div>
-                  <label for="regaddrs" class="loginlb">Reg. Address</label>
-                  <i class="fas fa-map-marked-alt"></i>
-                  <textarea style="resize:none" class="lodinip" name="regaddress" id="regaddrs" cols="24" rows="4" placeholder="Registred Address here...."></textarea>
-                  <i class="fas fa-exclamation-circle failure-icon"></i>
-                  <i class="far fa-check-circle success-icon"></i>
-                  <div class="error"></div>
-              </div>
-      
-              <!-- /** 
+
+
+                <label for="regaddrs" class="loginlb">Reg. Address</label>
+                <div class="smallcont">
+                    <div class="iconinput">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <textarea style="resize: none" class="lodinip" name="regaddress" id="regaddrs" cols="24" rows="4" placeholder="Registred Address here...."></textarea>
+                    </div>
+
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
+                </div>
+
+
+
+                <!-- /** 
                 * ! head address Input here
                **/ -->
-      
-               <div>
-                  <label for="offaddrs" class="loginlb">Head office Address</label>
-                  <i class="far fa-building"></i>
-                  <textarea style="resize:none" class="lodinip" name="offaddress" id="offaddrs" cols="24" rows="4" placeholder="Head office Address here...."></textarea>
-                  <i class="fas fa-exclamation-circle failure-icon"></i>
-                  <i class="far fa-check-circle success-icon"></i>
-                  <div class="error"></div>
-              </div>
-      
-              <!-- /** 
+
+
+                <label for="offaddrs" class="loginlb">Head office Address</label>
+                <div class="smallcont">
+                    <div class="iconinput">
+                        <i class="far fa-building"></i>
+                        <textarea style="resize: none" class="lodinip" name="offaddress" id="offaddrs" cols="24" rows="4" placeholder="Head office Address here...."></textarea>
+                    </div>
+
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
+                </div>
+
+
+
+                <!-- /** 
                 * ! facebook Input here
                **/ -->
-      
-               <div>
-                  <label for="fburl" class="loginlb">facebook</label>
-                  <i class="fab fa-facebook"></i>
-                  <input
-                  type="fburl"
-                  name="fburl"
-                  id="fburl"
-                  class="lodinip"
-                  placeholder="facebook page link..."
-                />
-                  <i class="fas fa-exclamation-circle failure-icon"></i>
-                  <i class="far fa-check-circle success-icon"></i>
-                  <div class="error"></div>
-              </div>
-      
-              <!-- /** 
+
+
+                <label for="fburl" class="loginlb">facebook</label>
+                <div class="smallcont">
+                    <div class="iconinput">
+                        <i class="fab fa-facebook"></i>
+                        <input
+                            type="fburl"
+                            name="fburl"
+                            id="fburl"
+                            class="lodinip"
+                            placeholder="facebook page link..." />
+                    </div>
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
+                </div>
+
+
+
+                <!-- /** 
                 * ! twitter Input here
                **/ -->
-      
-               <div>
-                  <label for="twurl" class="loginlb">twitter</label>
-                  <i class="fab fa-twitter-square"></i>
-                  <input
-                  type="twurl"
-                  name="twurl"
-                  id="twurl"
-                  class="lodinip"
-                  placeholder="twitter account link..."
-                />
-                  <i class="fas fa-exclamation-circle failure-icon"></i>
-                  <i class="far fa-check-circle success-icon"></i>
-                  <div class="error"></div>
-              </div>
-      
-              <!-- /** 
+
+
+                <label for="twurl" class="loginlb">twitter</label>
+                <div class="smallcont">
+                    <div class="iconinput">
+                        <i class="fab fa-twitter-square"></i>
+                        <input
+                            type="twurl"
+                            name="twurl"
+                            id="twurl"
+                            class="lodinip"
+                            placeholder="twitter account link..." />
+                    </div>
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
+                </div>
+
+
+
+
+                <!-- /** 
                 * ! instagram Input here
                **/ -->
-      
-               <div>
-                  <label for="igurl" class="loginlb">instagram</label>
-                  <i class="fab fa-instagram"></i>
-                  <input
-                  type="igurl"
-                  name="igurl"
-                  id="igurl"
-                  class="lodinip"
-                  placeholder="instagram account link..."
-                />
-                  <i class="fas fa-exclamation-circle failure-icon"></i>
-                  <i class="far fa-check-circle success-icon"></i>
-                  <div class="error"></div>
-              </div>
-      
-              <button type="submit" id="submit">Submit</button>
-            </form>
-          </div>
-      </div>
-    
-    
 
-        <button class="submit-btn" type="submit" id="submit">Update</button> 
+
+                <label for="igurl" class="loginlb">instagram</label>
+                <div class="smallcont">
+                    <div class="iconinput">
+                        <i class="fab fa-instagram"></i>
+                        <input
+                            type="igurl"
+                            name="igurl"
+                            id="igurl"
+                            class="lodinip"
+                            placeholder="instagram account link..." />
+                    </div>
+
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
+                </div>
+
+
+
+
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </div>
     </div>
-    </div>
+
 </asp:Content>
