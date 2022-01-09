@@ -9,5 +9,27 @@
   <figcaption>Edit Contact Details</figcaption>
 </figure>
 </fieldset>
+    <div class="contact-box">
+<div class="contact-form-wrapper">
+      
+        <div class="form-item">
+          <textarea class="" name="add" required="required"></textarea>
+          <label>Registered Address:</label>
+        </div>
+    `   <div class="form-item">
+          <textarea class="" name="headAdd" required="required"></textarea>
+          <label>Head Office Address:</label>
+        </div>
+        <div class="form-item">
+          <input type="text" id="email" required="required"/>
+          <label>Email:</label>
+        </div>
+        <div class="form-item">
+          <input type="text" id="phone" required="required"/>
+          <label>Phone Number:</label>
+        </div>
 
+        <button class="submit-btn" type="submit" id="submit">Update</button> 
+    </div>
+    </div>
 </asp:Content>
