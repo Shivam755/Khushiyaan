@@ -12,12 +12,38 @@
     font-weight:bold;
     font-family:Arial, Helvetica, sans-serif;
 }
-.parentClass{
-    border:groove;
-    margin: 2px 2px 0px 0px;
+.resClass {
+    color: chocolate;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    width: 500px;
+    align-content: center;
+    position: center;
+    width: 100vw;
+    font-weight: 500;
+    word-spacing: 10px;
+    font-size: 20px;
+    padding:10px;
 }
-.resClass{
-    color:chocolate;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-bottom:groove;
+th {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    color:red;
+}
+th, td{
+    padding:5px;
+}
+.emailClass{
+    font-style:italic;
+}
+a{
+    text-decoration:none;
+}
+table {
+   height:auto;
+   width:90vw;
+   text-align:center;
+}
+#tableCont{
+    padding:15px;
 }
