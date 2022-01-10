@@ -12,27 +12,4 @@ namespace Khushiyaan
 
         
     }
-}                        Email.InnerText = view.Value;
-                        break;
-                    case "RegisteredAddress":
-                        RegisteredAddress.InnerText = view.Value;
-                        break;
-                    default:
-                        break;
-
-                }
-            }
-        }
-    }
-}                        break;
-                    case "RegisteredAddress":
-                        RegisteredAddress.InnerText = view.Value;
-                        break;
-                    default:
-                        break;
-
-                }
-            }
-        }
-    }
-}
+}               
