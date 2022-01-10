@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminLayout.master" AutoEventWireup="true" CodeBehind="Edit_Contact.aspx.cs" Inherits="Khushiyaan.Edit_Contact" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Assets/Edit_Contact.css" rel="stylesheet" />
-    <script src="Assets/Edit_contact.js"></script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -18,7 +17,7 @@
             <img class="pic" src="https://apsdma.ap.gov.in/common_mns/img/contact-us.jpg" alt="logo" style="width:25%;" />
             <figcaption class="figcaption">Edit Contact Details</figcaption>
         </figure>
-    <div class="cont">
+    
         <div class="container">
             <div id="form">
                 <div class="title">Contact Info</div>
@@ -26,13 +25,11 @@
                 <!-- /** 
                 * ! user name Input here
                **/ -->
-
                 <label for="phone" class="loginlb">Contact Number</label>
-
                 <div class="smallcont">
                     <div class="iconinput">
                         <i class="fas fa-phone"></i>
-                        <input type="number" name="phone" class="lodinip" value="" id="phone" placeholder="Contact" />
+                        <input type="text" name="phone" class="lodinip" value="" id="phone" placeholder="Contact" />
                     </div>
 
                     <i class="fas fa-exclamation-circle failure-icon"></i>
@@ -43,8 +40,6 @@
                 <!-- /** 
                 * ! Email Input here
                **/ -->
-
-
                 <label for="email" class="loginlb">Email</label>
                 <div class="smallcont">
                     <div class="iconinput">
@@ -62,13 +57,9 @@
                     <div class="error"></div>
                 </div>
 
-
-
                 <!-- /** 
                 * ! Registered address Input here
                **/ -->
-
-
                 <label for="regaddrs" class="loginlb">Reg. Address</label>
                 <div class="smallcont">
                     <div class="iconinput">
@@ -81,13 +72,9 @@
                     <div class="error"></div>
                 </div>
 
-
-
                 <!-- /** 
                 * ! head address Input here
                **/ -->
-
-
                 <label for="offaddrs" class="loginlb">Head office Address</label>
                 <div class="smallcont">
                     <div class="iconinput">
@@ -100,21 +87,17 @@
                     <div class="error"></div>
                 </div>
 
-
-
                 <!-- /** 
                 * ! facebook Input here
                **/ -->
-
-
                 <label for="fburl" class="loginlb">facebook</label>
                 <div class="smallcont">
                     <div class="iconinput">
                         <i class="fab fa-facebook"></i>
                         <input
-                            type="fburl"
+                            type="url"
                             name="fburl"
-                            id="fburl"
+                            id="Facebook"
                             class="lodinip"
                             placeholder="facebook page link..." />
                     </div>
@@ -123,21 +106,17 @@
                     <div class="error"></div>
                 </div>
 
-
-
                 <!-- /** 
                 * ! twitter Input here
                **/ -->
-
-
                 <label for="twurl" class="loginlb">twitter</label>
                 <div class="smallcont">
                     <div class="iconinput">
                         <i class="fab fa-twitter-square"></i>
                         <input
-                            type="twurl"
+                            type="url"
                             name="twurl"
-                            id="twurl"
+                            id="Twitter"
                             class="lodinip"
                             placeholder="twitter account link..." />
                     </div>
@@ -146,22 +125,17 @@
                     <div class="error"></div>
                 </div>
 
-
-
-
                 <!-- /** 
                 * ! instagram Input here
                **/ -->
-
-
                 <label for="igurl" class="loginlb">instagram</label>
                 <div class="smallcont">
                     <div class="iconinput">
                         <i class="fab fa-instagram"></i>
                         <input
-                            type="igurl"
+                            type="url"
                             name="igurl"
-                            id="igurl"
+                            id="Instagram"
                             class="lodinip"
                             placeholder="instagram account link..." />
                     </div>
@@ -171,18 +145,14 @@
                     <div class="error"></div>
                 </div>
 
-
-
-
-                <button type="submit" id="updatebtn">Update</button>
+                <button type="submit" class="submit-btn" id="submit">Update</button>
             </div>
         </div>
-    </div>
+
     <script type="module">
         // Import the functions you need from the SDKs you need
-        import { getFirestore, collection, doc, getDoc, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
+        import { getFirestore, collection, getDocs, getDoc, updateDoc, doc} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -200,42 +170,140 @@
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+
+        // Utility function
+        let id = (id) => document.getElementById(id);
+
+        let classes = (classes) => document.getElementsByClassName(classes);
+
         const db = getFirestore(app);
         const contCol = collection(db, 'Contact Us Info');
-        const phoneDoc = doc(db, 'Contact Us Info/ContactNo');
-        const emailDoc = doc(db, 'Contact Us Info/Email');
-        const officeDoc = doc(db, 'Contact Us Info/HeadOffice');
-        const addressDoc = doc(db, 'Contact Us Info/RegisteredAddress');
-        const socialDoc = doc(db, 'Contact Us Info/Social');
+        let docs = null;
 
-
-
-
-
-        window.onload = function () {
-            document.getElementById('updatebtn').style.display = 'none';
-           // document.getElementById('updatebtn').onclick = updateInfo;
-            renderProj();
-            console.log(emailDoc.Value);
-        }
-        const phone = document.getElementById("phone");
-        const email = document.getElementById("email");
-        const regaddrs = document.getElementById("regaddrs");
-        const offaddrs = document.getElementById("offaddrs");
-        const fburl = document.getElementById("fburl");
-        const igurl = document.getElementById("igurl");
-        const twurl = document.getElementById("twurl");
+        let phone = id("phone"),
+            email = id("email"),
+            regaddrs = id("regaddrs"),
+            offaddrs = id("offaddrs"),
+            fburl = id("Facebook"),
+            twurl = id("Twitter"),
+            igurl = id("Instagram"),
+            submit = id("submit"),
+            errorMsg = classes("error"),
+            successIcon = classes("success-icon"),
+            failureIcon = classes("failure-icon");
         
-        
-        async function renderProj() {
-            phone.value = await phoneDoc.data().Value;
-            email.value = await emailDoc.data().Value;
-            regaddrs.value = await addressDoc.data().Value;
-            offaddrs.value = await officeDoc.data().Value;
-            fburl.value = await socialDoc.data().Value;
-            twurl.value = await socialDoc.data().Value;
-            igurl.value = await socialDoc.data().Value;
-        }
+        getDocs(contCol).then(snapshot => {
+            docs = snapshot;
+            snapshot.forEach(doc => {
+                if (doc.exists()) {
+
+                    switch (doc.id) {
+                        case "HeadOffice":
+                            offaddrs.value = doc.data()["Value"];
+                            break;
+                        case "RegisteredAddress":
+                            regaddrs.value = doc.data()["Value"];
+                            break;
+                        case "ContactNo":
+                            phone.value = doc.data()["Value"];
+                            break;
+                        case "Email":
+                            email.value = doc.data()["Value"];
+                            break;
+                        case "Social":
+                            var medias = doc.data()["Social"];
+                            //console.log(medias[0]);
+                            medias.forEach((media) => {
+                                getDoc(media)
+                                    .then(snap => {
+                                        id(snap.id).value =  snap.data()["Link"];
+                                    })
+
+                            });
+                            break;
+
+                    }
+
+                }
+            })
+        });
+   
+        submit.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            engine(phone, 0, "contact cannot be blank");
+            engine(email, 1, "Email cannot be blank");
+            engine(regaddrs, 2, "address cannot be blank");
+            engine(offaddrs, 3, "Address cannot be blank");
+            engine(fburl, 4, "url cannot be blank");
+            engine(twurl, 5, "url cannot be blank");
+            engine(igurl, 6, "url cannot be blank");
+
+            //Updating values
+            let curdoc = doc(db, "Contact Us Info", "HeadOffice");
+            updateDoc(curdoc, { Value: offaddrs.value })
+                .then(() => { console.log("done"); updateRegAdd() })
+                .catch(err => console.log(err));
+
+            const updateRegAdd = () => {
+                curdoc = doc(db, "Contact Us Info", "RegisteredAddress");
+                updateDoc(curdoc, { Value: regaddrs.value })
+                    .then(() => { console.log("done"); updateCont() })
+                    .catch(err => console.log(err));
+            }
+
+            const updateCont = () => {
+                curdoc = doc(db, "Contact Us Info", "ContactNo");
+                updateDoc(curdoc, { Value: "" + phone.value })
+                    .then(() => { console.log("done"); updateEmail() })
+                    .catch(err => console.log(err));
+            }
+
+            const updateEmail = () => {
+                curdoc = doc(db, "Contact Us Info", "Email");
+                updateDoc(curdoc, { Value: email.value })
+                    .then(() => { console.log("done"); updateSocial() })
+                    .catch(err => console.log(err));
+            }
+
+            const updateSocial = async() => {
+                curdoc = doc(db, "Contact Us Info", "Social");
+                let medias = await getDoc(curdoc);
+                console.log(medias);
+                let mediaList = medias.data()["Social"];
+                mediaList.forEach((media) => {
+
+                    getDoc(media)
+                        .then(snap => {
+                            updateDoc(media, { Link: id(media.id).value }).
+                                then(() => alert("Values Updated!!!"))
+                                .catch(err => console.log(err));
+                        })
+
+                });
+            }
+
+            return false;
+        });
+
+        let engine = (id, serial, message) => {
+            if (id.value.trim() === "") {
+                errorMsg[serial].innerHTML = message;
+                id.style.border = "2px solid red";
+
+                // icons
+                failureIcon[serial].style.opacity = "1";
+                successIcon[serial].style.opacity = "0";
+            } else {
+                errorMsg[serial].innerHTML = "";
+                id.style.border = "2px solid green";
+
+                // icons
+                failureIcon[serial].style.opacity = "0";
+                successIcon[serial].style.opacity = "1";
+            }
+        };
+
     </script>
+
 </asp:Content>

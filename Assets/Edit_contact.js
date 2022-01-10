@@ -9,14 +9,14 @@ let phone = id("phone"),
     fburl = id("fburl"),
     twurl = id("twurl"),
     igurl = id("igurl"),
-    form = id("form"),
+    submit = id("submit"),
 
 
     errorMsg = classes("error"),
     successIcon = classes("success-icon"),
     failureIcon = classes("failure-icon");
 
-form.addEventListener("submit", (e) => {
+submit.addEventListener("click", (e) => {
     e.preventDefault();
 
     engine(phone, 0, "contact cannot be blank");
@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
     engine(fburl, 4, "url cannot be blank");
     engine(twurl, 5, "url cannot be blank");
     engine(igurl, 6, "url cannot be blank");
-
+    return false;
 });
 
 let engine = (id, serial, message) => {

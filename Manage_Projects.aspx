@@ -184,7 +184,7 @@
                 name.value = "";
                 start.value = "";
                 des.value = "";
-                fileGet.fields = [];
+                fileGet.value = null;
                 document.getElementById('updatebtn').style.display = 'none';
                 document.getElementById('clearbtn').style.display = 'none';
                 document.getElementById('addbtn').style.display = 'block';
