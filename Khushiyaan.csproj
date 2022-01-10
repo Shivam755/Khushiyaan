@@ -158,8 +158,7 @@
     <Content Include="About_us.aspx" />
     <Content Include="Admin_home.aspx" />
     <Content Include="Admin_login.aspx" />
-    <Content Include="Admin_login.css" />
-    <Content Include="appi.js" />
+    <Content Include="Assets\Admin_login.css" />
     <Content Include="Assets\BasicLayout.css" />
     <Content Include="Assets\beachwarriorsp2.jpg" />
     <Content Include="Assets\bwhome.jpg" />
@@ -217,9 +216,7 @@
     <Compile Include="Admin_login.aspx.designer.cs">
       <DependentUpon>Admin_login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ContactUs.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Compile Include="ContactUs.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="Contact_us.aspx.cs">
       <DependentUpon>Contact_us.aspx</DependentUpon>

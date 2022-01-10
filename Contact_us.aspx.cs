@@ -1,38 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Khushiyaan
 {
-    public partial class ContactUs : System.Web.UI.Page
+    public partial class Contact_us : System.Web.UI.Page
     {
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        
-    }
-}                        Email.InnerText = view.Value;
-                        break;
-                    case "RegisteredAddress":
-                        RegisteredAddress.InnerText = view.Value;
-                        break;
-                    default:
-                        break;
-
-                }
-            }
-        }
-    }
-}                        break;
-                    case "RegisteredAddress":
-                        RegisteredAddress.InnerText = view.Value;
-                        break;
-                    default:
-                        break;
-
-                }
-            }
         }
     }
 }
