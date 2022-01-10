@@ -25,6 +25,7 @@
             <div id="titley">
                 <asp:Image id="Image1" runat="server" ImageUrl="https://www.khushiyaanfoundation.org/images/logo-wide-white.png"/>
                 <div id="toptitleview">WELCOME ADMIN!!!</div>
+                <asp:HyperLink ID="redirectme2home" runat="server" NavigateUrl="~/index.aspx">View Home</asp:HyperLink>
                 <button id="logoutbutton"  ><i class="fas fa-sign-out-alt"></i></button>
             </div>
 

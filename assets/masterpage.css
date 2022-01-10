@@ -104,6 +104,24 @@
     align-items:center;
 }
 
+
+.redirectme2home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
+    color: black;
+    border: double;
+    border-color: darkturquoise;
+    text-decoration: none;
+}
+
+
+    .redirectme2home:hover {
+        background-color: turquoise;
+        color: white;
+    }
+
     #logoutbutton i {
         color: black;
         align-self:center;
