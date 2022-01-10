@@ -7,12 +7,16 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css" integrity="sha512-rQgMaFKZKIoTKfYInSVMH1dSM68mmPYshaohG8pK17b+guRbSiMl9dDbd3Sd96voXZeGerRIFFr2ewIiusEUgg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" />
     <link href="Assets/Contact_us.css" rel="stylesheet"/>
     <link href ="Assets/Admin_home.css" rel ="stylesheet" />
     <link href="Assets/BasicLayout.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server" />
+    <link href="Help_query_StyleSheet.css" rel="stylesheet" type="text/css" />
+    <title>Khushiyaan </title>
     <script type="module">
         // Import the functions you need from the SDKs you need
-        import { getFirestore,collection,getDocs, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
+        import { getFirestore, collection, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
         // TODO: Add SDKs for Firebase products that you want to use
@@ -58,26 +62,21 @@
                             var medias = doc.data()["Social"];
                             //console.log(medias[0]);
                             medias.forEach((media) => {
-                                console.log(media.id);
-                                const social = collection(db, 'Social Media');
                                 getDoc(media)
                                     .then(snap => {
-                                        console.log(snap.data()["Link"]);
                                         document.getElementById(snap.id).setAttribute("href", snap.data()["Link"]);
                                     })
-                                
+
                             });
                             break;
 
                     }
-                    
+
                 }
             })
         });
 
     </script>
-    <asp:ContentPlaceHolder id="head" runat="server" />
-    <title>Khushiyaan </title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -100,9 +99,11 @@
                 <asp:HyperLink ID="donate" runat="server" NavigateUrl="https://donate.khushiyaanfoundation.org/donate" Target="_blank">Donate</asp:HyperLink>
             </div>
         </div>
+
         <div id="Content">
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
         </div>
+
         <div id="bottom">
             <div id="footer" class="row">
                 <div id="left" class="column">
@@ -127,6 +128,5 @@
         </div>
         </div>
     </form>
-    
 </body>
 </html>

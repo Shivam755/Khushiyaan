@@ -24,20 +24,21 @@ body {
     background-color: #8fa9ff;
 }
 /* Top part of page*/
-#Logo{
-    background-color:#ffc300;
+#Logo {
+    background-color: #EFBB62;
 }
-#TopLogo{
-    border-radius:5%;
-    margin:10px;
-    width:230px;
+#TopLogo {
+    background-color: white;
+    border-radius: 5%;
+    margin: 10px;
+    width: 230px;
     height: 100px;
 }
-#MenuBar{
-    background-color:#c405ff;
+#MenuBar {
+    background-color: #2558C8;
     font-size: 20px;
-    justify-content:space-between;
-    align-items:center;
+    justify-content: space-between;
+    align-items: center;
 }
 #NavBar {
     align-items: center;
@@ -48,13 +49,13 @@ body {
     padding: 0px 10px 0px 10px;
 }
     #NavBar ul :hover {
-        background-color:#40ff05;
+        background-color: #f144d4;
         border-radius: 5%;
-        color:#c405ff;
+        color: #44F161;
     }
     #NavBar ul li a {
         padding: 10px 10px 10px 10px;
-        color: #ffc405;
+        color: #EFBB62;
     }
 #donate {
     background-color: #40ff05;
@@ -69,10 +70,10 @@ body {
 #footer {
     padding: 10px;
     justify-self: flex-end;
-    background-color: #c405ff;
+    background-color: #2558C8;
     justify-content: space-between;
     font-size: 20px;
-    color: #ffc405;
+    color: #EFBB62;
 }
 #left{
     justify-content:space-evenly;
@@ -111,6 +112,6 @@ body {
     color:inherit;
 }
 #copyright {
-    background-color: #ffc300;
+    background-color: #EFBB62;
     justify-self: flex-end;
 }

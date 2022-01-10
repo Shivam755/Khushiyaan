@@ -1,0 +1,35 @@
+﻿.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.column{
+    display:flex;
+    flex-direction:column;
+}
+
+.team-cont{
+    margin:30px 300px;
+    padding: 20px;
+    border-radius:15px;
+    border:1px solid black;
+}
+
+.team-title{
+    font-size: 70px;
+    margin:10px;
+    align-self:center;
+}
+.team-des{
+    font-size: 25px;
+    margin:5px;
+}
+.mem-list {
+    margin: 10px;
+    font-size:33px;
+}
+
+#teams {
+    justify-content:center;
+    align-items:center;
+}

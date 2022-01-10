@@ -4,15 +4,36 @@
 
 
 .nameClass {
-   font-family: 'Arimo', sans-serif;
-    color:red;
-    text-align: right;
+    font-family: "Times New Roman", Times, serif;
+    color: red;
+    text-align: center;
+    font-size: 3vw;
+    
 }
 
 .descClass {
-    text-align: justify;
+    text-align: center;
     width: 500px;
     align-content: center;
-    justify-content: center;
+    position: center;
+    width: 100vw;
+    padding-left:10px;
+    padding-right:10px;
+    font-weight:500;
+    word-spacing: 10px;
+    font-size:20px;
+}
+.photoClass {
+    width: 30%;
+    height: auto;
+    position: center;
+}
+.dateClass {
+    text-align: center;
+    align-content: center;
+    position: center;
+    font-size: 20px;
+    color: crimson;
+    font-weight: bold;
 }
 
