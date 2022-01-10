@@ -26,7 +26,6 @@ namespace Khushiyaan
             //Getting data for table
             IAsyncEnumerator<DocumentReference> projects = db.Collection("Project").ListDocumentsAsync().GetAsyncEnumerator();
             int num = 0;
-            string assetspath = "../Assets/";
             await foreach (DocumentReference docref in projects)
             {
                 DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
@@ -38,8 +37,18 @@ namespace Khushiyaan
                 parent.Attributes.Add("ID", "parent" + num);
                 Container.Controls.Add(parent);
 
+ //               HtmlGenericControl parentPic = new("DIV");
+   //             parentPic.Attributes.Add("class", "parentPic");
+     //           parentPic.Attributes.Add("ID", "parentPic" + num);
+       //         parent.Controls.Add(parentPic);
+
+                HtmlGenericControl parentCon = new("DIV");
+                parentCon.Attributes.Add("class", "parentCon");
+                parentCon.Attributes.Add("ID", "parentCon" + num);
+                parent.Controls.Add(parentCon);
+
                 HtmlImage photoDiv = new();
-                photoDiv.Attributes.Add("src", assetspath + proj.Path);
+                photoDiv.Attributes.Add("src", proj.Path);
                 photoDiv.Attributes.Add("alt", proj.Name);
                 photoDiv.Attributes.Add("runat", "server");
                 photoDiv.Attributes.Add("class", "photoClass");
@@ -48,19 +57,18 @@ namespace Khushiyaan
                 HtmlGenericControl nameDiv = new("DIV");
                 nameDiv.Attributes.Add("class", "nameClass");
                 nameDiv.InnerHtml = proj.Name;
-                parent.Controls.Add(nameDiv);
+                parentCon.Controls.Add(nameDiv);
 
                 HtmlGenericControl descDiv = new("DIV");
                 descDiv.Attributes.Add("class", "descClass");
                 descDiv.InnerHtml = proj.Description;
-                parent.Controls.Add(descDiv);
+                parentCon.Controls.Add(descDiv);
 
                 HtmlGenericControl dateDiv = new("DIV");
                 dateDiv.Attributes.Add("class", "dateClass");
                 dateDiv.InnerHtml ="Started On : " + proj.StartedOn;
-                parent.Controls.Add(dateDiv);
+                parentCon.Controls.Add(dateDiv);
             }
-
         }
     }
 }

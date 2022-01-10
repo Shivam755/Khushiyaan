@@ -31,45 +31,27 @@ namespace Khushiyaan
                 ViewMessages view = docsnap.ConvertTo<ViewMessages>();
                 num += 1;
 
-                HtmlGenericControl parent= new("DIV");
-                parent.Attributes.Add("ID", "parent" + num);
-                parent.Attributes.Add("class", "parentClass");
-                Container.Controls.Add(parent);
 
-                HtmlGenericControl res = new("DIV");
-                res.Attributes.Add("class", "resClass");
-                res.InnerHtml = "Response "+num;
-
-                HtmlGenericControl nameDiv = new("DIV");
-                nameDiv.Attributes.Add("class", "nameClass");
-                nameDiv.InnerHtml += view.Name;
-
-                HtmlGenericControl messageDiv = new("DIV");
-                messageDiv.Attributes.Add("class", "messageClass");
-                messageDiv.InnerHtml = view.Message;
-
-                HtmlGenericControl emailDiv = new HtmlGenericControl("DIV");
-                emailDiv.Attributes.Add("class", "emailClass");
-                emailDiv.InnerHtml = view.Email;
-                parent.Controls.Add(res);
-                parent.Controls.Add(nameDiv);
-                parent.Controls.Add(emailDiv);
-                parent.Controls.Add(messageDiv);
 
                 //TABLE
 
                 HtmlTableRow row = new();
                 row.Attributes.Add("ID", num.ToString());
-                HtmlTableCell col1 = new(), col2 = new(), col3 = new();
+                HtmlTableCell col1 = new(), col2 = new(), col3 = new(), col4 = new();
+                col1.Attributes.Add("class","nameClass");
+                col2.Attributes.Add("class", "emailClass");
+                col3.Attributes.Add("class", "messageClass");
+                col4.InnerHtml = num.ToString(); 
+                row.Attributes.Add("cell-padding", "5px");
                 col1.InnerHtml = view.Name;
-                col2.InnerHtml = view.Email;
+                col2.InnerHtml ="<a href='#'>"+view.Email+"</a>";
                 col3.InnerHtml = view.Message;
+                row.Cells.Add(col4);
                 row.Cells.Add(col1);
                 row.Cells.Add(col2);
                 row.Cells.Add(col3);
                 Messages.Rows.Add(row);
             }
-
         }
     }
 }

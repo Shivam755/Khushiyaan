@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="Help_us" Language="C#" MasterPageFile="~/BasicLayout.master" AutoEventWireup="true" CodeBehind="Help_query.aspx.cs" Inherits="Khushiyaan.Help_query" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="Help_query_StyleSheet.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link href="Assets/Help_query_StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -16,9 +16,12 @@
         <h1 class="h1R"> SUPPORT US </h1>
         <div class="top-content">
             <h3 class="h3R">How ? </h3>
-            <label class="labelR" for="check2" style="display: inline-block;">DONATION </label>
-            <label class="labelR" for="check3" style="display: inline-block;">BE A MEMBER </label>
-            <label class="labelR" for="check4" style="display: inline-block;">VOLUNTEER </label>
+            <label class="labelR" for="check2">Donation</label>
+            <label class="labelR" for="check3">Be a member</label>
+            <label class="labelR" for="check4">Volunteer</label>
+
+            <div></div>
+            
         </div>
         <div class="photo-gallery">
             <div class="pic family">
