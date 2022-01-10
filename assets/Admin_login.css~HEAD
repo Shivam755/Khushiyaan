@@ -6,18 +6,27 @@
 }
 
 body {
+<<<<<<< HEAD:assets/Admin_login.css
+    background-image: linear-gradient(to right, #42275a, #734b6d);
+=======
     background-image: url('https://i.imgur.com/vxXIDiJ.jpg');
+>>>>>>> dd2d602b733b4c38dc2cd796edc420df14e8d931:Admin_login.css
     background-size: cover;
     background-position: center top;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    backdrop-filter: blur(3px);
 }
 
 form {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD:assets/Admin_login.css
+/*    align-items: center;
+*/    justify-content: center;
+=======
     align-items: center;
     justify-content: center;
     padding:0;
@@ -30,6 +39,7 @@ form {
     justify-content: center;
     padding: 0;
     margin: 0;
+>>>>>>> dd2d602b733b4c38dc2cd796edc420df14e8d931:Admin_login.css
 }
 
 .title {
@@ -53,7 +63,7 @@ form input {
 
 .user-input {
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #8292ac;
 }
 
 .user-input:focus {
@@ -76,5 +86,15 @@ form input {
 }
 
     .submit-button:hover {
-        background: rgba(255, 255, 255, .3);
+        background: rgba(255, 255, 255, .4);
     }
+
+.card {
+    width: 800px;
+    padding: 2rem;
+    border-radius: 1rem;
+    /* other styles */
+    background: rgb(10 10 10 / 0.20);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
