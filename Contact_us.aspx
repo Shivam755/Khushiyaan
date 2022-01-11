@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BasicLayout.master" AutoEventWireup="true" CodeBehind="Contact_us.aspx.cs" Inherits="Khushiyaan.ContactUs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BasicLayout.master" AutoEventWireup="true" CodeBehind="Contact_us.aspx.cs" Inherits="Khushiyaan.Contact_us" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Assets/Contact_us.css" rel="stylesheet"/>
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
