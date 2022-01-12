@@ -13,7 +13,7 @@
         }
     </script>
     <title></title>
-    <link href="Admin_login.css" rel="stylesheet" />
+    <link href="Assets/Admin_login.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
