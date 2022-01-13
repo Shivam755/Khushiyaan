@@ -58,7 +58,8 @@
 
 #adminfoot {
     background-color: #EFBB62;
-    justify-self: flex-end;
+    display: flex;
+    justify-content: center;
 }
 
 
