@@ -54,7 +54,7 @@ namespace Khushiyaan
                 photoDiv.Attributes.Add("class", "photoClass");
                 parent.Controls.Add(photoDiv);
 
-                HtmlGenericControl nameDiv = new("DIV");
+                HtmlGenericControl nameDiv = new("h1");
                 nameDiv.Attributes.Add("class", "nameClass");
                 nameDiv.InnerHtml = proj.Name;
                 parentCon.Controls.Add(nameDiv);

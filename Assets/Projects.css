@@ -1,6 +1,5 @@
 ﻿
 .nameClass {
-    font-family: "Times New Roman", Times, serif;
     color: red;
     text-align: center;
     font-size: 3vw;
@@ -29,6 +28,7 @@
     flex-direction:row;
     margin:0;
     padding:10px;
+    border-radius: 15px;
 }
 .dateClass {
     text-align: center;
@@ -52,9 +52,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 20px;
 }
 .parentPic {
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
