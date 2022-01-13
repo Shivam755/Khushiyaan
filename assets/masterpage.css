@@ -106,27 +106,27 @@
 }
 
 
-.redirectme2home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 150px;
-    color: black;
-    border: double;
-    border-color: darkturquoise;
+#redirectme2home {
+    background-color: #f144d4;
     text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5%;
+    color: #0540FF;
 }
 
 
-    .redirectme2home:hover {
+    #redirectme2home:hover {
         background-color: turquoise;
         color: white;
     }
 
-    #logoutbutton i {
+    #logoutbutton {
+        display:flex;
+        border-radius:10px;
         color: black;
-        align-self:center;
-        justify-self:center;
+        align-items:center;
+        justify-content:center;
         height: 40px;
         width: 40px;
     }
