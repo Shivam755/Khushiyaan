@@ -4,9 +4,9 @@
 /*slider css start*/
 
 #slider {
-    width: 900px;
+    width: 1000px;
     height: auto;
-    margin: 10%;
+    margin: 3%;
     margin-left: 15%;
     overflow: hidden;
 }
@@ -22,12 +22,12 @@
 .slide {
     float: left;
     list-style-type: none;
-    width: 900px;
+    width: 1000px;
     height: auto;
 }
 
 img {
-    width: 900px;
+    width: 1000px;
     height: auto;
 } 
 
@@ -42,8 +42,8 @@ img {
 }
 
 #ContentPlaceHolder1_Image1{
-    height:300px;
-    width:200px;
+    width:400px;
+    height:auto;
 }
 
 
@@ -55,7 +55,7 @@ img {
     padding: 1rem 3rem 1rem 3rem;
     padding: 1rem 3rem 1rem 3rem;
     font-family: 'Baskerville Old Face';
-    font-size: 15mm;
+    font-size: 13mm;
     margin: 0rem 1rem;
     border-radius:5px;
 }
@@ -67,15 +67,26 @@ img {
     flex-direction: column;
     background-color: floralwhite;
     font-family: 'Merriweather', serif;
-    font-size: 14px;
+    font-size: 6mm;
     padding: 1rem 3rem 1rem 3rem;
+}
+.content1 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: floralwhite;
+    font-family: 'Merriweather', serif;
+    font-size: 6mm;
+    padding: 1rem 3rem 1rem 3rem;
+    margin: 0 3rem;
 }
 
 .containtxt {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2rem;
+    margin: 2rem 4rem;
     padding: 2rem;
 }
 
@@ -95,7 +106,8 @@ img {
     display:flex;
     flex-direction:column;    
     justify-content:center;
-    width: 150px;
+    font-size:6mm;
+    width: 300px;
     color: black;
     border: double;
     border-color: darkturquoise;
@@ -112,7 +124,8 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 150px;
+    width: 300px;
+    font-size:6mm;
     color: black;
     border: double;
     border-color: darkturquoise;

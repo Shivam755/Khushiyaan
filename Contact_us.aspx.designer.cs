@@ -11,7 +11,7 @@ namespace Khushiyaan
 {
 
 
-    public partial class ContactUs
+    public partial class Contact_us
     {
     }
 }

@@ -48,7 +48,7 @@
             <hr style="height:5%; width:80%; margin:0" />
             </center>
         </div>
-        <div class="content">
+        <div class="content1">
             Khushiyaan Foundation welcomes new members. We currently have more than 100 members who just wish to spread happiness & love.
             Together we are strong to bring the change in the society.
         </div>
@@ -69,7 +69,7 @@
             <hr style="height:5%; width:80%; margin:0" />
             </center>
         </div>
-        <div class="content">
+        <div class="content1">
             Khushiyaan Foundation offers a diverse range of volunteering opportunities.
             Through these, you can not only contribute towards the betterment of the society & environment, but also undergo a transformational journey for yourselves.
         </div>
@@ -83,9 +83,9 @@
     <script>
         $(function () {
             //value for animation  
-            var width = 900;
-            var animationSpeed = 3000;
-            var pause = 5000;
+            var width = 1000;
+            var animationSpeed = 2000;
+            var pause = 7000;
             var currentSlide = 1;
             //Dom element.   
             var $slider = $('#slider');

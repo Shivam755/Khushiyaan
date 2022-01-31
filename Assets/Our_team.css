@@ -8,17 +8,18 @@
     flex-direction:column;
 }
 
-.team-cont{
-    margin:30px 300px;
+.team-cont {
+    background-color: #f8e1b9;
+    margin: 30px 300px;
     padding: 20px;
-    border-radius:15px;
-    border:1px solid black;
+    border-radius: 15px;
+    border: 1px solid black;
 }
 
-.team-title{
+.team-title {
     font-size: 70px;
-    margin:10px;
-    align-self:center;
+    margin: 10px;
+    align-self: center;
 }
 .team-des{
     font-size: 25px;

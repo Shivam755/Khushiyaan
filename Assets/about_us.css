@@ -17,7 +17,7 @@ body {
     padding: 1rem 3rem 1rem 3rem;
     padding: 1rem 3rem 1rem 3rem;
     font-family: 'Baskerville Old Face';
-    font-size: 20px;
+    font-size: 15mm;
     margin: 0rem 1rem;
     border-radius: 5px;
 }
@@ -29,7 +29,7 @@ body {
     flex-direction: column;
     background-color: floralwhite;
     font-family: 'Merriweather', serif;
-    font-size: 14px;
+    font-size: 8mm;
     padding: 1rem 3rem 1rem 3rem;
 }
 

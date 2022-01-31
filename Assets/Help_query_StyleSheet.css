@@ -1,14 +1,13 @@
 ﻿body{
     margin:0;
     padding: 0;
-    font-family: sans-serif;
 }
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Courier New';
+    /*font-family: 'Courier New';*/
 }
 .inputR{
     display: none;
@@ -62,6 +61,20 @@
     padding: 0 50px;
     color: white;
 }
+.labelR {
+    display: inline-block;
+    height: 100%;
+    margin: 0 20px;
+    line-height: 60px;
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+    transition: color .5s;
+}
+
+    .labelR:hover {
+        color: black;
+    }
 .labelHelp {
     display: inline-block;
     height: 50%;

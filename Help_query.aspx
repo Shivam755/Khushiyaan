@@ -16,6 +16,10 @@
         <h1 class="h1R"> SUPPORT US </h1>
         <div class="top-content">
             <h3 class="h3R">How ? </h3>
+            <label class="labelR" for="check2">Donation</label>
+            <label class="labelR" for="check3">Be a member</label>
+            <label class="labelR" for="check4">Volunteer</label>
+
             <div></div>
             
         </div>

@@ -104,13 +104,13 @@
         <div id="bottom">
             <div id="footer" class="row">
                 <div id="left" class="column">
-                    <p><b>Registered Address:</b> <span id="RegisteredAddress"></span></p>
-                    <p><b>Head Office:</b> <span id="HeadOffice"></span></p>
+                    <p class="pfoot"><b>Registered Address:</b> <span id="RegisteredAddress"></span></p>
+                    <p class="pfoot"><b>Head Office:</b> <span id="HeadOffice"></span></p>
                 </div>
                 <div id="mid" class="column">
-                    <p><i class="fas fa-phone"></i> <span id="ContactNo"></span></p>
-                    <p><i class="far fa-envelope"></i> <span id="Email"></span></p>
-                    <h3>Connect with us</h3>
+                    <p class="pfoot"><i class="fas fa-phone"></i> <span id="ContactNo"></span></p>
+                    <p class="pfoot"><i class="far fa-envelope"></i> <span id="Email"></span></p>
+                    <h3 class="pfoot">Connect with us</h3>
                     <div id="Social" class="row">
                         <asp:HyperLink ID="Facebook" runat="server" ><i class="fab fa-facebook"></i></asp:HyperLink>
                         <asp:HyperLink ID="Twitter" runat="server" ><i class="fab fa-twitter"></i></asp:HyperLink>
