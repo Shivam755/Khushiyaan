@@ -25,9 +25,10 @@
                 * ! user name Input here
                **/ -->
 
-                <label for="phone" class="loginlb">Contact Number</label>
+                
 
-                <div class="smallcont">
+                <div class="smallcont" style="height: 150px">
+                    <label for="phone" style="margin-bottom: 30px" class="loginlb">Contact Number</label>
                     <div class="iconinput">
                         <i class="fas fa-phone"></i>
                         <input type="number" name="phone" class="lodinip" value="" id="phone" placeholder="Contact" />
