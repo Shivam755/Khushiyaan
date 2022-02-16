@@ -29,7 +29,7 @@
                 
 
                 <div class="smallcont" style="height: 150px">
-                    <label for="phone" style="margin-bottom: 30px" class="loginlb">Contact Number</label>
+                    
                     <div class="iconinput">
                         <i class="fas fa-phone"></i>
                         <input type="text" name="phone" class="lodinip" value="" id="phone" placeholder="Contact" />
@@ -43,7 +43,7 @@
                 <!-- /** 
                 * ! Email Input here
                **/ -->
-                <label for="email" class="loginlb">Email</label>
+                
                 <div class="smallcont">
                     <div class="iconinput">
                         <i class="far fa-envelope"></i>
@@ -63,7 +63,7 @@
                 <!-- /** 
                 * ! Registered address Input here
                **/ -->
-                <label for="regaddrs" class="loginlb">Reg. Address</label>
+                
                 <div class="smallcont">
                     <div class="iconinput">
                         <i class="fas fa-map-marked-alt"></i>
@@ -78,7 +78,7 @@
                 <!-- /** 
                 * ! head address Input here
                **/ -->
-                <label for="offaddrs" class="loginlb">Head office Address</label>
+                
                 <div class="smallcont">
                     <div class="iconinput">
                         <i class="far fa-building"></i>
@@ -93,7 +93,7 @@
                 <!-- /** 
                 * ! facebook Input here
                **/ -->
-                <label for="fburl" class="loginlb">facebook</label>
+                
                 <div class="smallcont">
                     <div class="iconinput">
                         <i class="fab fa-facebook"></i>
@@ -112,7 +112,7 @@
                 <!-- /** 
                 * ! twitter Input here
                **/ -->
-                <label for="twurl" class="loginlb">twitter</label>
+                
                 <div class="smallcont">
                     <div class="iconinput">
                         <i class="fab fa-twitter-square"></i>
@@ -131,7 +131,7 @@
                 <!-- /** 
                 * ! instagram Input here
                **/ -->
-                <label for="igurl" class="loginlb">instagram</label>
+                
                 <div class="smallcont">
                     <div class="iconinput">
                         <i class="fab fa-instagram"></i>
