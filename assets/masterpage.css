@@ -130,3 +130,20 @@
         height: 40px;
         width: 40px;
     }
+
+#warning {
+    float: left;
+    height: 10vw;
+    width: 10vw;
+}
+
+.fbox {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.forbid {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+}

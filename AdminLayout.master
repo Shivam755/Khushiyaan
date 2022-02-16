@@ -52,11 +52,23 @@
     <script>
         if (sessionStorage.getItem("session") != "started") {
             document.getElementById("form1").style.display = "none";
-            document.write(`<h1>403 Forbidden</h1> <p>You don't have access to these pages unless you login</p>`);
+            document.write(`<div class="fbox">
+        <img id="warning" src="Assets/warning.png" alt="warning">
+        <p class="forbid">
+            <!-- <p style="font-style:'Press Start 2P', cursive; font-size: 5rem;">     -->
+            403 Forbidden!!!
+            <br>
+            <br>
+            You should be logged in to access this page.
+            <br>
+            You can login <a href='Admin_login.aspx'>here</a>
+            Or you can go to the <a href='index.aspx'>Home page</a>
+        </p>
+    </div>`);
         }
         document.getElementById("logoutbutton").onclick = e => {
             sessionStorage.clear();
-            window.location = "Admin_login.aspx";
+            window.location = "index.aspx";
             return false;
         }
     </script>
